@@ -27,7 +27,7 @@ export const Testimonials = () => {
     <>
       <Container className="border-divide border-x">
         <h2 className="pt-20 pb-10 text-center font-mono text-sm tracking-tight text-neutral-500 uppercase dark:text-neutral-400">
-          Trusted by Fast Growing Startups
+          Trusted by leading teams
         </h2>
       </Container>
       <DivideX />

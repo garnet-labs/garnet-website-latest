@@ -124,21 +124,45 @@ export default function AboutPage() {
           <h2 className="mt-12 text-center font-mono text-sm tracking-tight text-neutral-500 uppercase dark:text-neutral-400">
             Our Investors
           </h2>
-          <div className="mt-8 grid w-full max-w-6xl grid-cols-3 items-center gap-8 md:grid-cols-5 lg:grid-cols-9">
-            {investors.map((investor, index) => (
+          
+          {/* First row - Top 3 investors (larger) */}
+          <div className="mt-8 grid w-full max-w-4xl grid-cols-3 items-center gap-8">
+            {investors.slice(0, 3).map((investor, index) => (
               <div key={index} className="flex justify-center">
                 <Image
                   src={investor.logoLight}
                   alt={investor.name}
-                  width={120}
-                  height={120}
+                  width={140}
+                  height={140}
+                  className="h-12 w-auto object-contain dark:hidden"
+                />
+                <Image
+                  src={investor.logoDark}
+                  alt={investor.name}
+                  width={140}
+                  height={140}
+                  className="hidden h-12 w-auto object-contain dark:block"
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Second row - Remaining investors (smaller) */}
+          <div className="mt-6 grid w-full max-w-5xl grid-cols-3 items-center gap-6 md:grid-cols-6">
+            {investors.slice(3).map((investor, index) => (
+              <div key={index} className="flex justify-center">
+                <Image
+                  src={investor.logoLight}
+                  alt={investor.name}
+                  width={100}
+                  height={100}
                   className="h-8 w-auto object-contain dark:hidden"
                 />
                 <Image
                   src={investor.logoDark}
                   alt={investor.name}
-                  width={120}
-                  height={120}
+                  width={100}
+                  height={100}
                   className="hidden h-8 w-auto object-contain dark:block"
                 />
               </div>
