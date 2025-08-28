@@ -370,7 +370,7 @@ const UserMessage = ({
           {isActive && !isComplete && <span className="animate-pulse">|</span>}
         </div>
       </div>
-      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-xs font-medium text-white">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-xs font-medium text-white" style={{background: 'linear-gradient(to bottom right, #E64F4B, #C43E3A)'}}>
         <Image
           src="/avatar.webp"
           alt="user"
