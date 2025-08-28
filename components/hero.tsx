@@ -20,7 +20,7 @@ export const Hero = () => {
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-        Behavioral detection & blocking for your pipelines and clusters.
+        Behavioral detection & response for your containerized workloads.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
