@@ -1,0 +1,22 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="24" cy="24" r="24" fill="#E65C41"/>
+  <mask id="mask0" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
+    <circle cx="24" cy="24" r="24" fill="white"/>
+  </mask>
+  <g mask="url(#mask0)">
+    <!-- Face shape -->
+    <path d="M24 45C35.598 45 45 35.598 45 24C45 12.402 35.598 3 24 3C12.402 3 3 12.402 3 24C3 35.598 12.402 45 24 45Z" fill="#F8E7CB"/>
+    
+    <!-- Hair -->
+    <path d="M11 18C11 14.686 13.686 12 17 12H31C34.314 12 37 14.686 37 18V19C37 22.314 34.314 25 31 25H17C13.686 25 11 22.314 11 19V18Z" fill="#262626"/>
+    <path d="M14 18C14 14.686 16.686 12 20 12H28C31.314 12 34 14.686 34 18V24C34 27.314 31.314 30 28 30H20C16.686 30 14 27.314 14 24V18Z" fill="#262626"/>
+    
+    <!-- Glasses -->
+    <rect x="14" y="20" width="8" height="5" rx="2.5" fill="#E9C46A" fill-opacity="0.5"/>
+    <rect x="26" y="20" width="8" height="5" rx="2.5" fill="#E9C46A" fill-opacity="0.5"/>
+    <path d="M22 22.5H26" stroke="#E9C46A" stroke-width="1"/>
+    
+    <!-- Beard -->
+    <path d="M18 30C18 30 20 32 24 32C28 32 30 30 30 30V36C30 38.5 27.5 40 24 40C20.5 40 18 38.5 18 36V30Z" fill="#262626"/>
+  </g>
+</svg> 
