@@ -76,7 +76,7 @@ export const LLMModelSelectorSkeleton = () => {
         </div>
       </motion.div>
       <div className="mb-4 flex gap-2">
-        <div className="h-3 w-3 rounded-full bg-red-500"></div>
+        <div className="h-3 w-3 rounded-full" style={{backgroundColor: '#E64F4B'}}></div>
         <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
         <div className="h-3 w-3 rounded-full bg-green-500"></div>
       </div>
@@ -114,13 +114,14 @@ export const LLMModelSelectorSkeleton = () => {
             <div
               className={cn(
                 "rounded-sm border px-2 py-0.5 text-xs",
-                                sensor.variant === "success" &&
+                sensor.variant === "success" &&
                 "border-emerald-500 bg-emerald-50 text-emerald-500 dark:bg-emerald-50/10",
                 sensor.variant === "warning" &&
                 "border-yellow-500 bg-yellow-50 text-yellow-500 dark:bg-yellow-50/10",
                 sensor.variant === "danger" &&
-                "border-red-500 bg-red-50 text-red-500 dark:bg-red-50/10",
+                "border-red-50 bg-red-50 dark:bg-red-50/10",
               )}
+              style={sensor.variant === "danger" ? {borderColor: '#E64F4B', color: '#E64F4B'} : {}}
             >
               {sensor.status}
             </div>
@@ -178,7 +179,8 @@ export const LLMModelSelectorSkeleton = () => {
                     delay: index * 1 + randomDelay,
                     ease: "easeOut",
                   }}
-                  className="absolute top-1/2 left-1/2 h-1 w-1 text-xs text-red-400"
+                  className="absolute top-1/2 left-1/2 h-1 w-1 text-xs"
+                  style={{color: '#E64F4B'}}
                 >
                   ✨
                 </motion.div>
@@ -363,7 +365,7 @@ const UserMessage = ({
   return (
     <div className="flex justify-end gap-3">
       <div className="flex max-w-xs flex-col gap-1">
-        <div className="rounded-2xl rounded-br-md bg-red-600 px-4 py-2 text-sm text-white">
+        <div className="rounded-2xl rounded-br-md px-4 py-2 text-sm text-white" style={{backgroundColor: '#E64F4B'}}>
           {isActive ? displayText : content}
           {isActive && !isComplete && <span className="animate-pulse">|</span>}
         </div>
