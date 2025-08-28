@@ -13,10 +13,10 @@ import Link from "next/link";
 export const Hero = () => {
   return (
     <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
-      <Badge text="For fast moving engineering teams." />
+      <Badge text="For fast moving platform teams." />
       <Heading className="mt-4">
         Runtime security for modern <br />
-        <span className="text-brand">engineering teams</span>
+        <span className="text-brand">platform teams</span>
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
