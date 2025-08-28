@@ -148,7 +148,8 @@ export const LLMModelSelectorSkeleton = () => {
                 ease: "easeInOut",
               },
             }}
-            className="absolute inset-y-0 left-0 h-full w-[2px] bg-gradient-to-t from-transparent via-red-600 to-transparent"
+            className="absolute inset-y-0 left-0 h-full w-[2px] bg-gradient-to-t from-transparent to-transparent"
+            style={{background: 'linear-gradient(to top, transparent, #E64F4B, transparent)'}}
           >
             {Array.from({ length: 8 }).map((_, sparkleIndex) => {
               const randomX = Math.random() * 100 - 50;
