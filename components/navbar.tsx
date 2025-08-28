@@ -137,6 +137,9 @@ const DesktopNav = ({
       </div>
       <div className="flex items-center gap-2">
         <ModeToggle />
+        <Button variant="secondary" as={Link} href="https://calendly.com/garnet-security/demo">
+          Book Demo
+        </Button>
         <Button as={Link} href="/sign-up">
           Deploy Jibril
         </Button>
@@ -178,6 +181,9 @@ const FloatingNav = ({
       </div>
       <div className="flex items-center gap-2">
         <ModeToggle />
+        <Button variant="secondary" as={Link} href="https://calendly.com/garnet-security/demo">
+          Book Demo
+        </Button>
         <Button as={Link} href="/sign-up">
           Deploy Jibril
         </Button>

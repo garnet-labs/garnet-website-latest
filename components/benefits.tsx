@@ -165,7 +165,7 @@ const MiddleCard = () => {
         <div className="relative z-20 h-full w-full rounded-[5px] bg-white dark:bg-neutral-900">
           <div className="flex items-center justify-between p-4">
             <div className="flex gap-1">
-              <div className="size-2 rounded-full bg-red-400"></div>
+              <div className="size-2 rounded-full" style={{backgroundColor: '#E64F4B'}}></div>
               <div className="size-2 rounded-full bg-yellow-400"></div>
               <div className="size-2 rounded-full bg-green-400"></div>
             </div>

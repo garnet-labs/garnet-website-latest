@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <Container className="border-divide flex min-h-screen flex-col items-center justify-center border-x px-4">
+    <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
       <Badge text="For fast moving engineering teams." />
       <Heading className="mt-4">
         Runtime security for modern <br />

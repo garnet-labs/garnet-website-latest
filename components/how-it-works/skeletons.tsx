@@ -421,6 +421,7 @@ const DeployCard = ({
             variant === "success" && "bg-green-200",
             variant === "warning" && "bg-yellow-200",
           )}
+          style={variant === "danger" ? {backgroundColor: '#E64F4B20'} : {}}
         >
           <ForkIcon
             className={cn(
@@ -430,6 +431,7 @@ const DeployCard = ({
               variant === "success" && "text-green-500",
               variant === "warning" && "text-yellow-500",
             )}
+            style={variant === "danger" ? {color: '#E64F4B'} : {}}
           />
         </div>
         <span className="text-charcoal-700 text-xs font-medium sm:text-sm">

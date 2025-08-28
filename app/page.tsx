@@ -4,6 +4,7 @@ import { CTA, CTAOrbit } from "@/components/cta";
 import { DivideX } from "@/components/divide";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
+import { LogoCloud } from "@/components/logo-cloud";
 import { Security } from "@/components/security";
 import { Testimonials } from "@/components/testimonials";
 import { UseCases } from "@/components/use-cases";
