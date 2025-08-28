@@ -13,19 +13,19 @@ import Link from "next/link";
 export const Hero = () => {
   return (
     <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
-      <Badge text="For fast moving platform teams." />
+      <Badge text="For modern platform and security teams." />
       <Heading className="mt-4">
-        Runtime security for modern <br />
-        <span className="text-brand">platform teams</span>
+        Runtime threat monitoring for <br />
+        <span className="text-brand">containerized workloads</span>
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-        Behavioral detection & response for your containerized workloads.
+        Behavioral detection & response engine with AI powered triage.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
         <Button as={Link} href="/sign-up">
-          Deploy Jibril (Free)
+          Start monitoring (Free)
         </Button>
         <Button variant="secondary" as={Link} href="/contact">
           Book demo
