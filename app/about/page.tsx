@@ -7,9 +7,9 @@ import { InformationBlock } from "@/components/information-block";
 import { ProgressiveBlur } from "@/components/progressive-blur";
 import { SectionHeading } from "@/components/seciton-heading";
 import { SubHeading } from "@/components/subheading";
-import { Testimonials } from "@/components/testimonials";
 import { careers } from "@/constants/careers";
 import { founders } from "@/constants/founders";
+import { investors, individualInvestors } from "@/constants/investors";
 import { LinkedInIcon } from "@/icons/general";
 
 import { getSEOTags } from "@/lib/seo";
@@ -31,7 +31,7 @@ export default function AboutPage() {
           <div className="flex flex-col items-start justify-start">
             <Badge text="Our Story" />
             <Heading className="mt-4 text-left">
-              Runtime security for modern infrastructure
+              Securing modern infrastructure
             </Heading>
             <SubHeading className="mt-6 mr-auto text-left">
               We believe security should be invisible, automatic, and effective. Founded by engineers who saw 
@@ -89,7 +89,6 @@ export default function AboutPage() {
           </div>
         </div>
       </Container>
-      <Testimonials />
       <Container className="border-divide border-x border-t p-4 py-20 md:px-8 md:py-40">
         <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2">
           <div className="flex flex-col items-start justify-start">
@@ -110,142 +109,65 @@ export default function AboutPage() {
           <InformationBlock />
         </div>
       </Container>
-      <DivideX />
-      <Container className="border-divide flex flex-col items-center border-x py-16">
-        <Badge text="Our Team" />
-        <SectionHeading className="mt-4">
-          Built by Security Engineers
-        </SectionHeading>
-        <SubHeading className="mx-auto mt-6 max-w-lg px-4">
-          Former engineers from Aqua, RedHat, Canonical, and Stream - united by a
-          mission to make security invisible and effective
-        </SubHeading>
-        <div className="mt-12 grid w-full grid-cols-1 gap-6 px-4 md:grid-cols-2 md:px-8 lg:grid-cols-3">
-          {founders.map((founder) => (
-            <div
-              className="group relative h-60 overflow-hidden rounded-2xl md:h-100"
-              key={founder.name + founder.title}
-            >
-              <Image
-                src={founder.src}
-                alt={founder.name}
-                width={500}
-                height={500}
-                className="h-full w-full object-cover object-top"
-              />
-              <ProgressiveBlur
-                className="pointer-events-none absolute bottom-0 left-0 hidden h-[30%] w-full transition-all duration-200 group-hover:block"
-                blurIntensity={2}
-              />
-              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-xl bg-black/80 px-4 py-2">
-                <div>
-                  <h3 className="text-sm font-medium text-white">
-                    {founder.name}
-                  </h3>
-                  <p className="text-sm text-neutral-300">{founder.title}</p>
-                </div>
-                <a
-                  href={founder.url}
-                  target="_blank"
-                  className="cursor-pointer"
-                >
-                  <LinkedInIcon className="h-5 w-5 text-white" />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
-      <DivideX />
       <Container className="border-divide flex flex-col items-center border-x border-b pb-20">
-        <div className="divide-divide border-divide grid grid-cols-1 border-b lg:grid-cols-2 lg:divide-x">
-          <div className="flex flex-col items-start justify-start px-4 py-10 md:px-8 md:py-20">
-            <Badge text="Careers" />
-            <SectionHeading className="mt-4 text-left">
-              Join us in securing the <br />
-              software supply chain
-            </SectionHeading>
-            <SubHeading className="mt-6 mr-auto max-w-md text-left">
-              We're building the security platform engineering teams actually want.
-              If you're passionate about eBPF, runtime security, and making developers' 
-              lives easier, we want to hear from you.
-            </SubHeading>
-            <div className="mt-4 flex items-center gap-2">
-              <p className="text-charcoal-700 text-base font-medium dark:text-neutral-100">
-                Join the team
-              </p>
-              <div className="flex items-center">
-                {founders.slice(0, 3).map((founder) => (
-                  <Image
-                    key={founder.name + founder.title}
-                    src={founder.src}
-                    alt={founder.name}
-                    width={500}
-                    height={500}
-                    className="-mr-3 size-10 rounded-full border border-white object-cover"
-                  />
-                ))}
-                <div className="flex size-10 items-center justify-center rounded-full bg-gray-300">
-                  <p className="text-charcoal-700 text-sm font-medium">
-                    {founders.length - 3}+
+        <div className="flex flex-col items-center justify-center px-4 py-10 md:px-8 md:py-20">
+          <Badge text="Investors" />
+          <SectionHeading className="mt-4 text-center">
+            Backed by leading security investors
+          </SectionHeading>
+          <SubHeading className="mt-6 max-w-2xl text-center">
+            Trusted by world-class investors who believe in our mission to make runtime 
+            security invisible and effective for every engineering team.
+          </SubHeading>
+          
+          {/* Institutional Investors */}
+          <h2 className="mt-12 text-center font-mono text-sm tracking-tight text-neutral-500 uppercase dark:text-neutral-400">
+            Our Investors
+          </h2>
+          <div className="mt-8 grid w-full max-w-6xl grid-cols-3 items-center gap-8 md:grid-cols-5 lg:grid-cols-9">
+            {investors.map((investor, index) => (
+              <div key={index} className="flex justify-center">
+                <Image
+                  src={investor.logoLight}
+                  alt={investor.name}
+                  width={120}
+                  height={120}
+                  className="h-8 w-auto object-contain dark:hidden"
+                />
+                <Image
+                  src={investor.logoDark}
+                  alt={investor.name}
+                  width={120}
+                  height={120}
+                  className="hidden h-8 w-auto object-contain dark:block"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Individual Investors */}
+          <h2 className="mt-16 text-center font-mono text-sm tracking-tight text-neutral-500 uppercase dark:text-neutral-400">
+            Individual Investors
+          </h2>
+          <div className="mt-8 grid w-full max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {individualInvestors.map((investor, index) => (
+              <div key={index} className="flex flex-col items-start space-y-2 p-4">
+                <Image
+                  src={investor.image}
+                  alt={investor.name}
+                  width={60}
+                  height={60}
+                  className="rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold text-neutral-800 dark:text-neutral-200">
+                    {investor.name}
+                  </h4>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    {investor.role}
                   </p>
                 </div>
               </div>
-            </div>
-            <h2 className="mt-8 text-left font-mono text-sm tracking-tight text-neutral-500 uppercase dark:text-neutral-400">
-              Our Investors
-            </h2>
-            <div className="mt-8 grid w-full grid-cols-3 items-center gap-10 md:grid-cols-3">
-              <Image
-                src="/investors/index.png"
-                alt="Index Ventures"
-                width={120}
-                height={120}
-                className="h-6 w-auto object-contain dark:invert dark:filter"
-              />
-              <Image
-                src="/investors/sv-angel-logo.png"
-                alt="SV Angel"
-                width={70}
-                height={70}
-                className="h-6 w-auto object-contain dark:invert dark:filter"
-              />
-              <Image
-                src="/investors/fmc-logo.png"
-                alt="FirstMinute Capital"
-                width={140}
-                height={140}
-                className="h-6 w-auto object-contain dark:invert dark:filter"
-              />
-            </div>
-          </div>
-          <div className="divide-divide border-divide divide-y border-t lg:border-t-0">
-            {careers.slice(0, 4).map((career, index) => (
-              <Link
-                href={career.href}
-                key={career.id}
-                className="block cursor-pointer px-4 py-4 hover:bg-gray-100 md:px-8 dark:hover:bg-neutral-800"
-              >
-                <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
-                  <h3 className="text-brand font-medium">{career.title}</h3>
-                  <div className="hidden size-1 rounded-full bg-gray-400 sm:block dark:bg-neutral-600"></div>
-                  <p className="text-sm text-gray-600 dark:text-neutral-200">
-                    {career.location}
-                  </p>
-                  <div className="hidden size-1 rounded-full bg-gray-400 sm:block dark:bg-neutral-600"></div>
-                  <span className="text-xs font-medium text-gray-600 dark:text-neutral-400">
-                    {Math.floor(
-                      (new Date().getTime() -
-                        new Date(career.createdAt).getTime()) /
-                        (1000 * 60 * 60 * 24),
-                    )}{" "}
-                    days ago
-                  </span>
-                </div>
-                <p className="mt-2 font-medium text-neutral-500 dark:text-neutral-200">
-                  {career.description}
-                </p>
-              </Link>
             ))}
           </div>
         </div>

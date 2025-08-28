@@ -23,16 +23,4 @@ export const testimonials = [
     company: "PreWave",
     avatar: "/testimonials/teodor.png",
   },
-  {
-    src: "/logos/wallet.png",
-    logoClassName: "h-6 w-auto ",
-    sideText: "Game",
-    sideSubText: "Changer",
-    quote:
-      "Dynamic analysis of libraries at build-time is a game changer. It will annihilate a whole new class of vulnerabilities if it works.",
-    name: "Don X.",
-    position: "Security Engineer",
-    company: "Crypto Wallet",
-    avatar: "/testimonials/ryotax.svg",
-  },
 ];

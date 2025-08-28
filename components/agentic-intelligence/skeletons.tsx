@@ -16,6 +16,14 @@ import {
   OpenAILogo,
   SlackLogo,
   SupabaseLogo,
+  GarnetLogo,
+  JibrilSensorLogo,
+  KubernetesLogo,
+  GitHubActionsLogo,
+  PagerDutyLogo,
+  AlertIcon,
+  AWSLogo,
+  DockerLogo,
 } from "@/icons/general";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -26,22 +34,22 @@ import { LogoSVG } from "../logo";
 import { IconBlock } from "../common/icon-block";
 
 export const LLMModelSelectorSkeleton = () => {
-  const models = [
+  const sensors = [
     {
-      name: "Claude 4 Opus",
-      logo: AnthropicLogo,
-      status: "Unavailable",
-      variant: "danger",
-    },
-    {
-      name: "ChatGPT",
-      logo: OpenAILogo,
+      name: "k8s-prod-us-1",
+      logo: KubernetesLogo,
       status: "Connected",
       variant: "success",
     },
     {
-      name: "Llama 3.2",
-      logo: MetaLogo,
+      name: "gha-runner-eu-17",
+      logo: GitHubActionsLogo,
+      status: "Blocked",
+      variant: "danger",
+    },
+    {
+      name: "k8s-dev-eu-3",
+      logo: KubernetesLogo,
       status: "Waiting",
       variant: "warning",
     },
@@ -57,13 +65,13 @@ export const LLMModelSelectorSkeleton = () => {
       >
         <div className="flex w-full items-center justify-between p-2">
           <div className="flex items-center gap-2 font-medium">
-            <OpenAILogo />
-            Open AI
+            <JibrilSensorLogo />
+            Jibril
           </div>
-          <p className="font-mono text-gray-600">GPT 5</p>
+          <p className="font-mono text-gray-600">v2.1</p>
         </div>
         <DivideX />
-        <div className="m-2 rounded-sm border border-blue-500 bg-blue-50 px-2 py-0.5 text-blue-500 dark:bg-blue-50/10">
+        <div className="m-2 rounded-sm border border-emerald-500 bg-emerald-50 px-2 py-0.5 text-emerald-500 dark:bg-emerald-50/10">
           Connected
         </div>
       </motion.div>
@@ -75,17 +83,17 @@ export const LLMModelSelectorSkeleton = () => {
       <div className="mt-12 flex items-center gap-2">
         <IntegrationsLogo />
         <span className="text-charcoal-700 text-sm font-medium dark:text-neutral-200">
-          All Models
+          Fleet Status
         </span>
         <span className="text-charcoal-700 rounded-lg border border-gray-200 bg-gray-50 px-2 py-0.5 text-xs dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200">
-          69,420
+          182
         </span>
       </div>
       <DivideX className="mt-2" />
-      {models.map((model, index) => (
-        <div className="relative" key={model.name + index}>
+      {sensors.map((sensor, index) => (
+        <div className="relative" key={sensor.name + index}>
           <motion.div
-            key={model.name + index}
+            key={sensor.name + index}
             className="mt-4 flex items-center justify-between gap-2"
             initial={{ clipPath: "inset(0 100% 0 0)", filter: "blur(10px)" }}
             whileInView={{ clipPath: "inset(0 0% 0 0)", filter: "blur(0px)" }}
@@ -97,24 +105,24 @@ export const LLMModelSelectorSkeleton = () => {
             }}
           >
             <div className="flex items-center gap-2">
-              <model.logo className="h-4 w-4 shrink-0" />
+              <sensor.logo className="h-4 w-4 shrink-0" />
               <span className="text-charcoal-700 text-sm font-medium dark:text-neutral-200">
-                {model.name}
+                {sensor.name}
               </span>
             </div>
 
             <div
               className={cn(
                 "rounded-sm border px-2 py-0.5 text-xs",
-                model.variant === "success" &&
-                  "border-emerald-500 bg-emerald-50 text-emerald-500 dark:bg-emerald-50/10",
-                model.variant === "warning" &&
-                  "border-yellow-500 bg-yellow-50 text-yellow-500 dark:bg-yellow-50/10",
-                model.variant === "danger" &&
-                  "border-red-500 bg-red-50 text-red-500 dark:bg-red-50/10",
+                                sensor.variant === "success" &&
+                "border-emerald-500 bg-emerald-50 text-emerald-500 dark:bg-emerald-50/10",
+                sensor.variant === "warning" &&
+                "border-yellow-500 bg-yellow-50 text-yellow-500 dark:bg-yellow-50/10",
+                sensor.variant === "danger" &&
+                "border-red-500 bg-red-50 text-red-500 dark:bg-red-50/10",
               )}
             >
-              {model.status}
+              {sensor.status}
             </div>
           </motion.div>
           <motion.div
@@ -139,7 +147,7 @@ export const LLMModelSelectorSkeleton = () => {
                 ease: "easeInOut",
               },
             }}
-            className="absolute inset-y-0 left-0 h-full w-[2px] bg-gradient-to-t from-transparent via-blue-500 to-transparent"
+            className="absolute inset-y-0 left-0 h-full w-[2px] bg-gradient-to-t from-transparent via-red-600 to-transparent"
           >
             {Array.from({ length: 8 }).map((_, sparkleIndex) => {
               const randomX = Math.random() * 100 - 50;
@@ -170,7 +178,7 @@ export const LLMModelSelectorSkeleton = () => {
                     delay: index * 1 + randomDelay,
                     ease: "easeOut",
                   }}
-                  className="absolute top-1/2 left-1/2 h-1 w-1 text-xs text-blue-400"
+                  className="absolute top-1/2 left-1/2 h-1 w-1 text-xs text-red-400"
                 >
                   ✨
                 </motion.div>
@@ -189,20 +197,19 @@ export const TextToWorkflowBuilderSkeleton = () => {
   const initialChat = [
     {
       role: "user",
-      content: "Hello, how are you?",
+      content: "Alert #2319 · Suspicious kubectl exec detected.",
     },
     {
       role: "assistant",
-      content: "I'm good, thank you! How can I help you today?",
+      content: "Blocked container-escape attempt.",
     },
     {
       role: "user",
-      content:
-        "I want to create a workflow that will send an email to all my clients",
+      content: "Show me the forensic timeline.",
     },
     {
       role: "assistant",
-      content: "Nah, do it yourself.",
+      content: "View forensic timeline?",
     },
   ];
 
@@ -216,12 +223,12 @@ export const TextToWorkflowBuilderSkeleton = () => {
   const INITIAL_DELAY = 200;
   const MESSAGE_DELAY = 400;
   const RANDOM_MESSAGES = [
-    "Do you really think I was gonna answer?",
-    "I'm not a real assistant, I'm just a skeleton",
-    "Meri ek taang nakli hai, mai hockey ka bohot bada khiladi tha. Ek din Uday bhai ko meri kisi baat pe gussa aagaya aur mere hi hockey se meri taang ke do tukde kar diye. Lekin dil ke bohot ache hain, fauran mujhe hospital le gaye aur ye nakli taang lagwayi",
-    "Mimicking chat here, this isn't real.",
-    "Bro stop.",
-    "Main langotiya jeetu ka mara hua yaar bol rha hoon.",
+    "Threat analyzed and blocked.",
+    "Forensic data collected.",
+    "Container breach detected - immediate action required.",
+    "This is a security demo interface.",
+    "Alert timeline updated.",
+    "Suspicious activity neutralized.",
   ];
 
   const handleSendMessage = () => {
@@ -288,7 +295,7 @@ export const TextToWorkflowBuilderSkeleton = () => {
           onChange={(e) => setInputText(e.target.value)}
           onKeyPress={handleKeyPress}
           className="flex-1 border-none px-4 py-4 text-xs placeholder-neutral-600 focus:outline-none"
-          placeholder="Ask Notus AI"
+          placeholder="Query security alerts"
         />
         <div className="mr-4 flex items-center gap-2">
           <AttachmentIcon />
@@ -356,12 +363,12 @@ const UserMessage = ({
   return (
     <div className="flex justify-end gap-3">
       <div className="flex max-w-xs flex-col gap-1">
-        <div className="rounded-2xl rounded-br-md bg-blue-500 px-4 py-2 text-sm text-white">
+        <div className="rounded-2xl rounded-br-md bg-red-600 px-4 py-2 text-sm text-white">
           {isActive ? displayText : content}
           {isActive && !isComplete && <span className="animate-pulse">|</span>}
         </div>
       </div>
-      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-xs font-medium text-white">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-xs font-medium text-white">
         <Image
           src="/avatar.webp"
           alt="user"
@@ -397,7 +404,7 @@ const AssistantMessage = ({
   return (
     <div className="flex gap-3 px-1">
       <div className="shadow-aceternity flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-medium text-white dark:bg-neutral-900">
-        <LogoSVG className="size-4 text-black dark:text-white" />
+        <GarnetLogo className="size-4" />
       </div>
       <div className="flex max-w-xs flex-col gap-1">
         <div className="text-charcoal-700 rounded-2xl rounded-bl-md bg-gray-100 px-4 py-2 text-sm">
@@ -424,44 +431,44 @@ export const NativeToolsIntegrationSkeleton = () => {
       <motion.div className="relative mx-auto my-12 hidden h-full max-h-70 min-h-80 max-w-[67rem] grid-cols-2 p-4 lg:grid">
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-10">
-            <TextIconBlock icon={<WindowIcon />} text="Meeting Summarizer">
+            <TextIconBlock icon={<GitHubActionsLogo />} text="GitHub Actions · build.yml">
               <TopSVG className="absolute top-2 -right-84" />
             </TextIconBlock>
-            <TextIconBlock icon={<CodeIcon />} text="Code Reviewer">
+            <TextIconBlock icon={<SlackLogo />} text="Slack · #security-alerts">
               <MiddleSVG className="absolute top-2 -right-84" />
             </TextIconBlock>
-            <TextIconBlock icon={<PhoneIcon />} text="Customer Support">
+            <TextIconBlock icon={<PagerDutyLogo />} text="PagerDuty · On-call">
               <BottomSVG className="absolute -right-84 bottom-2" />
             </TextIconBlock>
           </div>
           <div className="relative h-16 w-16 overflow-hidden rounded-md bg-gray-200 p-px shadow-xl dark:bg-neutral-700">
-            <div className="absolute inset-0 scale-[1.4] animate-spin rounded-full bg-conic [background-image:conic-gradient(at_center,transparent,var(--color-blue-500)_20%,transparent_30%)] [animation-duration:2s]"></div>
-            <div className="absolute inset-0 scale-[1.4] animate-spin rounded-full [background-image:conic-gradient(at_center,transparent,var(--color-brand)_20%,transparent_30%)] [animation-delay:1s] [animation-duration:2s]"></div>
+            <div className="absolute inset-0 scale-[1.4] animate-spin rounded-full bg-conic [background-image:conic-gradient(at_center,transparent,#E64F4B_20%,transparent_30%)] [animation-duration:2s]"></div>
+            <div className="absolute inset-0 scale-[1.4] animate-spin rounded-full [background-image:conic-gradient(at_center,transparent,#0A1A4C_20%,transparent_30%)] [animation-delay:1s] [animation-duration:2s]"></div>
             <div className="relative z-20 flex h-full w-full items-center justify-center rounded-[5px] bg-white dark:bg-neutral-900">
-              <LogoSVG className="text-black dark:text-white" />
+              <GarnetLogo className="text-black dark:text-white" />
             </div>
           </div>
         </div>
         <div className="relative flex h-full w-full items-center justify-start">
           <RightSideSVG />
           <div className="relative flex flex-col items-center gap-2">
-            <span className="relative z-20 rounded-sm border border-blue-500 bg-blue-50 px-2 py-0.5 text-xs text-blue-500 dark:bg-blue-900 dark:text-white">
+            <span className="relative z-20 rounded-sm border border-emerald-500 bg-emerald-50 px-2 py-0.5 text-xs text-emerald-500 dark:bg-emerald-900 dark:text-white">
               Connected
             </span>
             <div className="absolute inset-x-0 -top-30 flex h-full flex-col items-center">
-              <IconBlock icon={<NotionLogo className="size-6" />} />
+              <IconBlock icon={<KubernetesLogo className="size-6" />} />
               <VerticalLine />
               <VerticalLine />
-              <IconBlock icon={<LinearLogo className="size-6" />} />
+              <IconBlock icon={<AWSLogo className="size-6" />} />
             </div>
           </div>
           <div className="2 absolute -top-4 right-30 flex h-full flex-col items-center">
-            <IconBlock icon={<SupabaseLogo className="size-6" />} />
+            <IconBlock icon={<DockerLogo className="size-6" />} />
             <VerticalLine />
-            <IconBlock icon={<SlackLogo className="size-6" />} />
+            <IconBlock icon={<AlertIcon className="size-6" />} />
           </div>
           <RightSideSVG />
-          <IconBlock icon={<OpenAILogo className="size-6" />} />
+          <IconBlock icon={<GarnetLogo className="size-6" />} />
         </div>
       </motion.div>
     </>
@@ -519,7 +526,7 @@ const VerticalLine = (
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="var(--color-line)" />
-          <stop offset="0.5" stopColor="#F17463" />
+          <stop offset="0.5" stopColor="#E64F4B" />
           <stop offset="1" stopColor="var(--color-line)" />
         </motion.linearGradient>
       </defs>
@@ -578,7 +585,7 @@ const RightSideSVG = (props: React.SVGProps<SVGSVGElement>) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="var(--color-line)" />
-          <stop offset="0.5" stopColor="var(--color-blue-500)" />
+          <stop offset="0.5" stopColor="#E64F4B" />
           <stop offset="1" stopColor="var(--color-line)" />
         </motion.linearGradient>
       </defs>
@@ -646,8 +653,8 @@ const TopSVG = (props: React.SVGProps<SVGSVGElement>) => {
           }}
         >
           <stop stopColor="var(--color-line)" />
-          <stop offset="0.33" stopColor="#F17463" />
-          <stop offset="0.66" stopColor="#F17463" />
+          <stop offset="0.33" stopColor="#E64F4B" />
+          <stop offset="0.66" stopColor="#E64F4B" />
           <stop offset="1" stopColor="var(--color-line)" />
         </motion.linearGradient>
       </defs>
@@ -706,8 +713,8 @@ export const MiddleSVG = (props: React.SVGProps<SVGSVGElement>) => {
           }}
         >
           <stop stopColor="var(--color-line)" />
-          <stop offset="0.33" stopColor="var(--color-blue-500)" />
-          <stop offset="0.66" stopColor="var(--color-blue-500)" />
+          <stop offset="0.33" stopColor="#E64F4B" />
+          <stop offset="0.66" stopColor="#E64F4B" />
           <stop offset="1" stopColor="var(--color-line)" />
         </motion.linearGradient>
       </defs>
@@ -760,8 +767,8 @@ export const BottomSVG = (props: React.SVGProps<SVGSVGElement>) => {
           }}
         >
           <stop stopColor="var(--color-line)" />
-          <stop offset="0.33" stopColor="var(--color-yellow-500)" />
-          <stop offset="0.66" stopColor="var(--color-yellow-500)" />
+          <stop offset="0.33" stopColor="#E64F4B" />
+          <stop offset="0.66" stopColor="#E64F4B" />
           <stop offset="1" stopColor="var(--color-line)" />
         </motion.linearGradient>
       </defs>

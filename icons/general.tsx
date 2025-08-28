@@ -578,3 +578,175 @@ export const SunIcon = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
+
+export const GarnetLogo = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <circle cx="8" cy="8" r="7" fill="#E64F4B" stroke="#0A1A4C" strokeWidth="2"/>
+      <path 
+        d="M5 8l2 2 4-4" 
+        stroke="white" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const JibrilSensorLogo = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect x="2" y="6" width="12" height="8" rx="2" fill="#E64F4B"/>
+      <path d="M6 6V4a2 2 0 0 1 4 0v2" stroke="#0A1A4C" strokeWidth="2" fill="none"/>
+      <circle cx="8" cy="10" r="1" fill="white"/>
+    </svg>
+  );
+};
+
+export const KubernetesLogo = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M8.5 1.5c-.2-.3-.6-.3-.8 0L2.2 6.8c-.2.2-.2.5 0 .7l5.5 5.3c.2.2.6.2.8 0l5.3-5.3c.2-.2.2-.5 0-.7L8.5 1.5z"
+        fill="#326CE5"
+      />
+      <circle cx="8" cy="8" r="1.5" fill="white"/>
+      <path d="M8 6.5v3M6.5 8h3" stroke="#326CE5" strokeWidth="1" strokeLinecap="round"/>
+    </svg>
+  );
+};
+
+export const GitHubActionsLogo = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <circle cx="8" cy="8" r="7" fill="#2088FF"/>
+      <path
+        d="M6 5l4 3-4 3V5z"
+        fill="white"
+      />
+    </svg>
+  );
+};
+
+export const PagerDutyLogo = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect width="16" height="16" rx="3" fill="#06AC38"/>
+      <path
+        d="M4 4h5c1.1 0 2 .9 2 2s-.9 2-2 2H6v4H4V4z"
+        fill="white"
+      />
+      <path
+        d="M6 6v2h3c.6 0 1-.4 1-1s-.4-1-1-1H6z"
+        fill="#06AC38"
+      />
+    </svg>
+  );
+};
+
+export const AlertIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M8 1.5l6.5 11H1.5L8 1.5z"
+        fill="#E64F4B"
+        stroke="#0A1A4C"
+        strokeWidth="1"
+      />
+      <path d="M8 5v4" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+      <circle cx="8" cy="11" r="0.5" fill="white"/>
+    </svg>
+  );
+};
+
+export const AWSLogo = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M3 4.5l5-2.5 5 2.5-5 2.5-5-2.5z"
+        fill="#FF9900"
+      />
+      <path
+        d="M3 7l5 2.5 5-2.5v3l-5 2.5-5-2.5V7z"
+        fill="#FF9900"
+        opacity="0.7"
+      />
+    </svg>
+  );
+};
+
+export const DockerLogo = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect x="2" y="6" width="2" height="2" fill="#2496ED"/>
+      <rect x="4" y="6" width="2" height="2" fill="#2496ED"/>
+      <rect x="6" y="6" width="2" height="2" fill="#2496ED"/>
+      <rect x="8" y="6" width="2" height="2" fill="#2496ED"/>
+      <rect x="4" y="4" width="2" height="2" fill="#2496ED"/>
+      <rect x="6" y="4" width="2" height="2" fill="#2496ED"/>
+      <rect x="6" y="2" width="2" height="2" fill="#2496ED"/>
+      <path
+        d="M11 6.5c3 0 3 3.5 0 3.5H2c-1 0-1-3.5 0-3.5h9z"
+        fill="#2496ED"
+        opacity="0.7"
+      />
+    </svg>
+  );
+};

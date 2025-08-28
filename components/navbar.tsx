@@ -16,6 +16,10 @@ import { ModeToggle } from "./mode-toggle";
 
 const items = [
   {
+    title: "Docs",
+    href: "https://docs.garnet.ai",
+  },
+  {
     title: "Pricing",
     href: "/pricing",
   },
@@ -24,12 +28,8 @@ const items = [
     href: "/about",
   },
   {
-    title: "Careers",
-    href: "/careers",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
+    title: "Jibril",
+    href: "https://jibril.garnet.ai",
   },
 ];
 
@@ -105,7 +105,7 @@ const MobileNav = ({ items }: { items: { title: string; href: string }[] }) => {
                   href="/sign-up"
                   className="w-full"
                 >
-                  Start building
+                  Deploy Jibril
                 </Button>
               </div>
             </div>
@@ -138,7 +138,7 @@ const DesktopNav = ({
       <div className="flex items-center gap-2">
         <ModeToggle />
         <Button as={Link} href="/sign-up">
-          Start building
+          Deploy Jibril
         </Button>
       </div>
     </div>
@@ -179,7 +179,7 @@ const FloatingNav = ({
       <div className="flex items-center gap-2">
         <ModeToggle />
         <Button as={Link} href="/sign-up">
-          Start building
+          Deploy Jibril
         </Button>
       </div>
     </motion.div>

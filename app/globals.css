@@ -10,7 +10,7 @@
 }
 @theme {
   --font-primary: var(--font-inter), Inter Display, sans-serif;
-  --font-mono: var(--font-mono), DM Mono, monospace;
+  --font-mono: var(--font-dm-mono), DM Mono, monospace;
   --color-charcoal-900: #202020;
   --color-charcoal-800: #29292e;
   --color-charcoal-700: #343434;

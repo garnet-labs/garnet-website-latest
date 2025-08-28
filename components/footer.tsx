@@ -8,59 +8,39 @@ import { SendIcon } from "@/icons/bento-icons";
 export const Footer = () => {
   const product = [
     {
-      title: "Agent Builder",
+      title: "Jibril (Free)",
+      href: "/sign-up",
+    },
+    {
+      title: "GitHub Actions",
       href: "#",
     },
     {
-      title: "Simulation",
+      title: "Kubernetes",
       href: "#",
     },
     {
-      title: "Integrations",
+      title: "Docker",
       href: "#",
     },
     {
-      title: "Multi Agent",
-      href: "#",
-    },
-    {
-      title: "Workflow API",
+      title: "API",
       href: "#",
     },
   ];
 
   const company = [
     {
-      title: "Sign In",
-      href: "/sign-in",
-    },
-    {
-      title: "About",
-      href: "/about",
-    },
-    {
-      title: "Contact",
-      href: "/contact",
+      title: "Docs",
+      href: "https://docs.garnet.sh",
     },
     {
       title: "Pricing",
       href: "/pricing",
     },
     {
-      title: "Careers",
-      href: "/careers",
-    },
-    {
-      title: "Docs",
-      href: "#",
-    },
-    {
-      title: "Changelog",
-      href: "#",
-    },
-    {
-      title: "Glossary",
-      href: "#",
+      title: "About",
+      href: "/about",
     },
   ];
 
@@ -84,9 +64,9 @@ export const Footer = () => {
         <div className="mb-6 sm:col-span-2 md:col-span-4 lg:col-span-3">
           <Logo />
           <SubHeading as="p" className="mt-4 max-w-lg text-left">
-            Manage and simulate agentic workflows
+            Runtime security for modern engineering teams
           </SubHeading>
-          <Button className="mt-4 mb-8 lg:mb-0">Start building</Button>
+          <Button className="mt-4 mb-8 lg:mb-0">Deploy Jibril</Button>
         </div>
         <div className="col-span-1 mb-4 flex flex-col gap-2 md:col-span-1 md:mb-0">
           <p className="text-sm font-medium text-gray-600">Product</p>
@@ -140,17 +120,17 @@ export const Footer = () => {
             as="p"
             className="mt-4 text-left text-sm md:text-sm lg:text-sm"
           >
-            Get the latest product news and behind the scenes updates.
+            Get the latest security updates and threat intelligence.
           </SubHeading>
         </div>
       </div>
       <div className="my-4 flex flex-col items-center justify-between px-4 pt-8 md:flex-row">
         <p className="text-footer-link text-sm">
-          © 2024 Notus Aceternity Fight Club. All rights reserved.
+          © 2025 Garnet. All rights reserved.
         </p>
         <div className="mt-4 flex items-center gap-4 md:mt-0">
           <Link
-            href="https://twitter.com"
+            href="https://twitter.com/garnetsec"
             className="text-footer-link transition-colors hover:text-gray-900"
           >
             <svg
@@ -167,7 +147,7 @@ export const Footer = () => {
             </svg>
           </Link>
           <Link
-            href="https://linkedin.com"
+            href="https://linkedin.com/company/garnet-security"
             className="text-footer-link transition-colors hover:text-gray-900"
           >
             <svg
@@ -186,7 +166,7 @@ export const Footer = () => {
             </svg>
           </Link>
           <Link
-            href="https://instagram.com"
+            href="https://github.com/garnet-security"
             className="text-footer-link transition-colors hover:text-gray-900"
           >
             <svg
@@ -199,9 +179,7 @@ export const Footer = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-              <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
             </svg>
           </Link>
         </div>

@@ -31,29 +31,6 @@ export const Hero = () => {
           Book demo
         </Button>
       </div>
-      <div className="mt-6 flex items-center gap-2">
-        <GartnerLogo />
-        <div className="-gap-5 flex items-center">
-          {[...Array(5)].map((_, index) => (
-            <motion.div
-              key={index}
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{ duration: 1, delay: index * 0.05 }}
-            >
-              <Star key={index} />
-            </motion.div>
-          ))}
-        </div>
-        <span className="border-l border-gray-500 pl-4 text-[10px] text-gray-600 sm:text-sm">
-          Security innovation 2025 by
-        </span>
-        <GartnerLogoText className="size-12 sm:size-16" />
-      </div>
     </Container>
   );
 };
