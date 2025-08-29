@@ -5,6 +5,9 @@ import {
   MetaLogo,
   OpenAILogo,
   SlackLogo,
+  AzureLogo,
+  DatadogLogo,
+  ElasticLogo
 } from "@/icons/general";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -62,7 +65,7 @@ export const DesignYourWorkflowSkeleton = () => {
 };
 
 export const ConnectYourTooklsSkeleton = () => {
-  const text = `Write the first and second rule of it using Claude and ChatGPT.`;
+  const text = `Reverse shell attempt observed in container auth-service. Garnet AI escalated severity to High.`;
   const [mounted, setMounted] = useState(false);
   const randomWidth = useMemo(() => Math.random() * 100, [mounted]);
 
@@ -87,7 +90,7 @@ export const ConnectYourTooklsSkeleton = () => {
         <div className="mt-12 flex items-center gap-2">
           <IntegrationsLogo />
           <span className="text-charcoal-700 text-sm font-medium dark:text-neutral-200">
-            Tasks
+            Threat detection
           </span>
         </div>
         <DivideX className="mt-2" />
@@ -166,15 +169,15 @@ export const ConnectYourTooklsSkeleton = () => {
             Integrations
           </span>
           <span className="text-charcoal-700 rounded-lg border border-gray-200 bg-gray-50 px-2 py-0.5 text-xs dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200">
-            200
+            4
           </span>
         </div>
         <DivideX className="mt-2" />
         <div className="mt-4 flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <OpenAILogo className="h-4 w-4 shrink-0" />
+            <AzureLogo className="h-4 w-4 shrink-0" />
             <span className="text-charcoal-700 text-xs font-medium md:text-sm dark:text-neutral-200">
-              ChatGPT
+            Sentinel
             </span>
           </div>
 
@@ -184,9 +187,33 @@ export const ConnectYourTooklsSkeleton = () => {
         </div>
         <div className="mt-4 flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <AnthropicLogo className="h-4 w-4 shrink-0" />
+            <SlackLogo className="h-4 w-4 shrink-0" />
             <span className="text-charcoal-700 text-xs font-medium md:text-sm dark:text-neutral-200">
-              Claude 4 Opus
+              Slack
+            </span>
+          </div>
+
+          <div className="rounded-sm border border-blue-500 bg-blue-50 px-2 py-0.5 text-xs text-blue-500">
+            Connected
+          </div>
+        </div>
+        <div className="mt-4 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <DatadogLogo className="h-4 w-4 shrink-0" />
+            <span className="text-charcoal-700 text-xs font-medium md:text-sm dark:text-neutral-200">
+              Datadog
+            </span>
+          </div>
+
+          <div className="rounded-sm border border-blue-500 bg-blue-50 px-2 py-0.5 text-xs text-blue-500">
+            Connected
+          </div>
+        </div>
+        <div className="mt-4 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <ElasticLogo className="h-4 w-4 shrink-0" />
+            <span className="text-charcoal-700 text-xs font-medium md:text-sm dark:text-neutral-200">
+              Elastic
             </span>
           </div>
 
@@ -195,7 +222,7 @@ export const ConnectYourTooklsSkeleton = () => {
           </div>
         </div>
         <div className="mt-2 flex flex-col">
-          {[...Array(3)].map((_, index) => (
+          {[...Array(1)].map((_, index) => (
             <motion.div
               key={`width-bar-right-${index}`}
               initial={{
@@ -226,67 +253,67 @@ export const DeployAndScaleSkeleton = () => {
 
   // Define deploy cards data for reusability
   const deployCards = [
-    { title: "deploy-dev-eu-324", subtitle: "2h ago", branch: "master" },
+    { title: "python modified /etc/sudoers", subtitle: "2h ago", branch: "master" },
     {
-      title: "deploy-prod-eu-128",
+      title: "curl connecting to attacker.com",
       subtitle: "10m ago",
-      branch: "main",
-      variant: "success" as const,
+      branch: "web-123",
+      variant: "danger" as const,
     },
-    { title: "deploy-dev-us-445", subtitle: "45m ago", branch: "feature/auth" },
+    { title: "bash executed /tmp/malware.sh", subtitle: "45m ago", branch: "feature/auth" },
     {
-      title: "deploy-prod-ap-223",
+      title: "sh ran chmod +x /tmp/agent",
       subtitle: "1h ago",
-      branch: "main",
-      variant: "success" as const,
+      branch: "api-7f2",
+      variant: "danger" as const,
     },
     {
-      title: "deploy-dev-eu-891",
+      title: "bash modified /usr/bin/ssh",
       subtitle: "2h ago",
-      branch: "fix/cache",
+      branch: "worker-a1",
       variant: "warning" as const,
     },
     {
-      title: "deploy-prod-us-337",
+      title: "python3 read /root/.ssh/id_rsa",
       subtitle: "3h ago",
-      branch: "main",
-      variant: "success" as const,
+      branch: "payments-svc",
+      variant: "warning" as const,
     },
     {
-      title: "deploy-dev-ap-556",
+      title: "python connected to 203.0.113.50:8080",
       subtitle: "4h ago",
       branch: "feat/api",
       variant: "danger" as const,
     },
     {
-      title: "deploy-dev-eu-672",
+      title: "python3 listened on 0.0.0.0:9001",
       subtitle: "5h ago",
       branch: "feat/search",
-      variant: "default" as const,
+      variant: "warning" as const,
     },
     {
-      title: "deploy-prod-ap-445",
+      title: "curl wrote /tmp/.curlrc",
       subtitle: "6h ago",
       branch: "main",
-      variant: "success" as const,
+      variant: "warning" as const,
     },
     {
-      title: "deploy-dev-us-891",
+      title: "python opened /etc/shadow",
       subtitle: "7h ago",
       branch: "fix/perf",
       variant: "warning" as const,
     },
     {
-      title: "deploy-prod-eu-223",
+      title: "node read /.aws/credentials",
       subtitle: "8h ago",
       branch: "main",
-      variant: "success" as const,
+      variant: "warning" as const,
     },
     {
-      title: "deploy-dev-ap-337",
+      title: "bash established reverse shell to 192.0.2.13:4444",
       subtitle: "9h ago",
       branch: "feat/analytics",
-      variant: "default" as const,
+      variant: "danger" as const,
     },
   ];
 
@@ -443,7 +470,7 @@ const DeployCard = ({
           {subtitle}
         </span>
         <div className="size-1 rounded-full bg-gray-400"></div>
-        <span className="text-charcoal-700 text-xs font-normal">{branch}</span>
+        {/* <span className="text-charcoal-700 text-xs font-normal">{branch}</span> */}
       </div>
     </div>
   );
