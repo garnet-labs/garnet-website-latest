@@ -32,32 +32,31 @@ export const AgenticIntelligence = () => {
       <div className="flex flex-col items-center py-16">
         <Badge text="Features" />
         <SectionHeading className="mt-4">
-          Pipeline protection architecture
+          Runtime detection & enforcement for{" "}
+          <span className="text-brand">K8s workloads</span>
         </SectionHeading>
 
-        <SubHeading as="p" className="mx-auto mt-6 max-w-lg px-2">
-          Defense-in-depth security for your CI/CD pipelines and container workloads
+        <SubHeading as="p" className="mx-auto mt-6 max-w-4xl px-2">
+          From CI/CD runners to containerized AI production workloads, Garnet provides runtime visibility and protection at the kernel. High-fidelity detections, automated intel-driven rules, and policy enforcement integrate seamlessly into your existing workflows.
         </SubHeading>
         <div className="border-divide divide-divide mt-16 grid grid-cols-1 divide-y border-y md:grid-cols-2 md:divide-x">
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
               <BrainIcon />
-              <CardTitle>eBPF Sensors</CardTitle>
+              <CardTitle>Lightweight runtime agent</CardTitle>
             </div>
             <CardDescription>
-              Kernel-level monitoring with minimal overhead. Detect threats at the
-              system call level before they can cause damage.
+            Deploy a high-performance eBPF agent in a few clicks, providing deep runtime visibility across any workload.
             </CardDescription>
             <LLMModelSelectorSkeleton />
           </Card>
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
               <MouseBoxIcon />
-              <CardTitle>GitHub Actions Guard</CardTitle>
+              <CardTitle>Automated threat intel → Detection recipes</CardTitle>
             </div>
             <CardDescription>
-              Purpose-built protection for GitHub Actions. Detect supply chain
-              attacks in your CI/CD pipeline before deployment.
+            In the background, our system turns global threat intel into runtime protection. C2 domains are blocked at the DNS layer, while detection rules for cryptominers, container escapes, and privilege escalation are continuously updated.
             </CardDescription>
             <TextToWorkflowBuilderSkeleton />
           </Card>
@@ -67,11 +66,10 @@ export const AgenticIntelligence = () => {
             <div className="pointer-events-none absolute inset-0 h-full w-full bg-[radial-gradient(var(--color-dots)_1px,transparent_1px)] mask-radial-from-10% [background-size:10px_10px]"></div>
             <div className="flex items-center gap-2">
               <NativeIcon />
-              <CardTitle>Centralized Dashboard</CardTitle>
+              <CardTitle>Kernel-level behavioral detection & response</CardTitle>
             </div>
             <CardDescription>
-              Single pane of glass for all your security events. Real-time threat
-              detection, forensics, and incident response.
+              High-fidelity behavioral detections with deep context, mapped to MITRE ATT&CK and get alerted directly into channels of your choice through our rich API integrations. 
             </CardDescription>
             <NativeToolsIntegrationSkeleton />
           </Card>

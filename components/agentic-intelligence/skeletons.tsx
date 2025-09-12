@@ -6,10 +6,13 @@ import {
   PhoneIcon,
   SendIcon,
   WindowIcon,
+  BrainIcon,
 } from "@/icons/bento-icons";
 import { DivideX } from "../divide";
 import {
   AnthropicLogo,
+  DatadogLogo,
+  ElasticLogo,
   LinearLogo,
   MetaLogo,
   NotionLogo,
@@ -32,25 +35,26 @@ import { useState, useEffect } from "react";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import { LogoSVG } from "../logo";
 import { IconBlock } from "../common/icon-block";
+import { DevopsIcon } from "@/icons/card-icons";
 
 export const LLMModelSelectorSkeleton = () => {
   const sensors = [
     {
       name: "k8s-prod-us-1",
       logo: KubernetesLogo,
-      status: "Connected",
+      status: "Online",
       variant: "success",
     },
     {
       name: "gha-runner-eu-17",
       logo: GitHubActionsLogo,
-      status: "Blocked",
+      status: "Warning",
       variant: "danger",
     },
     {
       name: "k8s-dev-eu-3",
       logo: KubernetesLogo,
-      status: "Waiting",
+      status: "Offline",
       variant: "warning",
     },
   ];
@@ -65,10 +69,9 @@ export const LLMModelSelectorSkeleton = () => {
       >
         <div className="flex w-full items-center justify-between p-2">
           <div className="flex items-center gap-2 font-medium">
-            <JibrilSensorLogo />
             Jibril
           </div>
-          <p className="font-mono text-gray-600">v2.1</p>
+          <p className="font-mono text-gray-600">v2.6</p>
         </div>
         <DivideX />
         <div className="m-2 rounded-sm border border-emerald-500 bg-emerald-50 px-2 py-0.5 text-emerald-500 dark:bg-emerald-50/10">
@@ -83,10 +86,10 @@ export const LLMModelSelectorSkeleton = () => {
       <div className="mt-12 flex items-center gap-2">
         <IntegrationsLogo />
         <span className="text-charcoal-700 text-sm font-medium dark:text-neutral-200">
-          Fleet Status
+          Agent fleet
         </span>
         <span className="text-charcoal-700 rounded-lg border border-gray-200 bg-gray-50 px-2 py-0.5 text-xs dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200">
-          182
+          3
         </span>
       </div>
       <DivideX className="mt-2" />
@@ -199,20 +202,36 @@ const TYPING_SPEED = 30;
 export const TextToWorkflowBuilderSkeleton = () => {
   const initialChat = [
     {
-      role: "user",
-      content: "Alert #2319 · Suspicious kubectl exec detected.",
+      role: "system",
+      content: "Domain detected: malware-c2.evil",
     },
     {
       role: "assistant",
-      content: "Blocked container-escape attempt.",
+      content: "DNS blocklist updated (Malware C2)",
     },
     {
-      role: "user",
-      content: "Show me the forensic timeline.",
+      role: "system",
+      content: "Cryptominer activity detected: xmrig process running",
     },
     {
       role: "assistant",
-      content: "View forensic timeline?",
+      content: "Cryptominer detection recipe updated (xmrig)",
+    },
+    {
+      role: "system", 
+      content: "Container escape attempt via runc detected",
+    },
+    {
+      role: "assistant",
+      content: "New detection recipe created for runc container escapes",
+    },
+    {
+      role: "system",
+      content: "Privilege escalation attempt: /etc/sudoers modified",
+    },
+    {
+      role: "assistant", 
+      content: "Added sudoers modification rule to detection config",
     },
   ];
 
@@ -226,12 +245,12 @@ export const TextToWorkflowBuilderSkeleton = () => {
   const INITIAL_DELAY = 200;
   const MESSAGE_DELAY = 400;
   const RANDOM_MESSAGES = [
-    "Threat analyzed and blocked.",
-    "Forensic data collected.",
-    "Container breach detected - immediate action required.",
-    "This is a security demo interface.",
-    "Alert timeline updated.",
-    "Suspicious activity neutralized.",
+    "Updated sudoers_modification.yaml recipe",
+    "Deployed new privilege escalation detection",
+    "Updated cryptominer detection • xmrig signatures added", 
+    "Created runc exec detection recipe",
+    "Updated sudoers_modification.yaml • MITRE T1548",
+    "Runtime behavioral rules synchronized across fleet",
   ];
 
   const handleSendMessage = () => {
@@ -292,19 +311,19 @@ export const TextToWorkflowBuilderSkeleton = () => {
   return (
     <motion.div className="relative mx-auto mt-2 h-full max-h-70 min-h-40 w-[85%] p-4">
       <div className="absolute inset-x-0 -bottom-4 mx-auto flex w-[85%] items-center justify-between rounded-lg border border-gray-300 bg-white shadow-[0px_2px_12px_0px_rgba(0,0,0,0.08)] dark:border-neutral-700 dark:bg-neutral-800">
-        <input
-          type="text"
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-          onKeyPress={handleKeyPress}
-          className="flex-1 border-none px-4 py-4 text-xs placeholder-neutral-600 focus:outline-none"
-          placeholder="Query security alerts"
-        />
-        <div className="mr-4 flex items-center gap-2">
-          <AttachmentIcon />
-          <button onClick={handleSendMessage} className="cursor-pointer">
-            <SendIcon />
-          </button>
+        <div className="flex flex-1 items-center gap-4 px-4">
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
+            <span className="text-xs font-mono text-green-600 dark:text-green-400">LIVE</span>
+          </div>
+          <input
+            type="text"
+            value=""
+            readOnly
+            disabled
+            className="flex-1 border-none py-4 text-xs font-mono placeholder-neutral-600 focus:outline-none dark:bg-neutral-800 cursor-default"
+            placeholder="Synced with 12 threat intelligence feeds"
+          />
         </div>
       </div>
       <div
@@ -325,6 +344,12 @@ export const TextToWorkflowBuilderSkeleton = () => {
           >
             {message.role === "user" ? (
               <UserMessage
+                content={message.content}
+                isActive={index === visibleMessages - 1}
+                onComplete={() => setCurrentMessageComplete(true)}
+              />
+            ) : message.role === "system" ? (
+              <SystemMessage
                 content={message.content}
                 isActive={index === visibleMessages - 1}
                 onComplete={() => setCurrentMessageComplete(true)}
@@ -406,11 +431,43 @@ const AssistantMessage = ({
 
   return (
     <div className="flex gap-3 px-1">
-      <div className="shadow-aceternity flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-medium text-white dark:bg-neutral-900">
-        <GarnetLogo className="size-4" />
+      <div className="shadow-aceternity flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-medium dark:bg-neutral-900">
+        <BrainIcon className="size-4 text-black dark:text-white" />
       </div>
       <div className="flex max-w-xs flex-col gap-1">
-        <div className="text-charcoal-700 rounded-2xl rounded-bl-md bg-gray-100 px-4 py-2 text-sm">
+        <div className="text-charcoal-700 rounded-2xl rounded-bl-md bg-gray-100 px-4 py-2 text-sm dark:bg-neutral-800 dark:text-neutral-200">
+          {isActive ? displayText : content}
+          {isActive && !isComplete && <span className="animate-pulse">|</span>}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const SystemMessage = ({
+  content,
+  isActive,
+  onComplete,
+}: {
+  content: string;
+  isActive: boolean;
+  onComplete: () => void;
+}) => {
+  const { displayText, isComplete } = useTypewriter(
+    isActive ? content : content,
+    TYPING_SPEED,
+  );
+
+  useEffect(() => {
+    if (isComplete && isActive) {
+      onComplete();
+    }
+  }, [isComplete, isActive, onComplete]);
+
+  return (
+    <div className="flex justify-center px-1">
+      <div className="flex max-w-xs flex-col gap-1">
+        <div className="rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-center text-xs font-mono text-orange-700 dark:border-orange-800 dark:bg-orange-900/20 dark:text-orange-300">
           {isActive ? displayText : content}
           {isActive && !isComplete && <span className="animate-pulse">|</span>}
         </div>
@@ -434,13 +491,13 @@ export const NativeToolsIntegrationSkeleton = () => {
       <motion.div className="relative mx-auto my-12 hidden h-full max-h-70 min-h-80 max-w-[67rem] grid-cols-2 p-4 lg:grid">
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-10">
-            <TextIconBlock icon={<GitHubActionsLogo />} text="GitHub Actions · build.yml">
+            <TextIconBlock icon={<CodeIcon />} text="detection-config.yaml">
               <TopSVG className="absolute top-2 -right-84" />
             </TextIconBlock>
-            <TextIconBlock icon={<SlackLogo />} text="Slack · #security-alerts">
+            <TextIconBlock icon={<WindowIcon />} text="network-policy.yaml">
               <MiddleSVG className="absolute top-2 -right-84" />
             </TextIconBlock>
-            <TextIconBlock icon={<PagerDutyLogo />} text="PagerDuty · On-call">
+            <TextIconBlock icon={<DevopsIcon />} text="response-policy.yaml">
               <BottomSVG className="absolute -right-84 bottom-2" />
             </TextIconBlock>
           </div>
@@ -448,7 +505,7 @@ export const NativeToolsIntegrationSkeleton = () => {
             <div className="absolute inset-0 scale-[1.4] animate-spin rounded-full bg-conic [background-image:conic-gradient(at_center,transparent,#E64F4B_20%,transparent_30%)] [animation-duration:2s]"></div>
             <div className="absolute inset-0 scale-[1.4] animate-spin rounded-full [background-image:conic-gradient(at_center,transparent,#0A1A4C_20%,transparent_30%)] [animation-delay:1s] [animation-duration:2s]"></div>
             <div className="relative z-20 flex h-full w-full items-center justify-center rounded-[5px] bg-white dark:bg-neutral-900">
-              <GarnetLogo className="text-black dark:text-white" />
+              <span className="text-xs font-medium text-black dark:text-white">Jibril</span>
             </div>
           </div>
         </div>
@@ -456,22 +513,22 @@ export const NativeToolsIntegrationSkeleton = () => {
           <RightSideSVG />
           <div className="relative flex flex-col items-center gap-2">
             <span className="relative z-20 rounded-sm border border-emerald-500 bg-emerald-50 px-2 py-0.5 text-xs text-emerald-500 dark:bg-emerald-900 dark:text-white">
-              Connected
+              API
             </span>
             <div className="absolute inset-x-0 -top-30 flex h-full flex-col items-center">
-              <IconBlock icon={<KubernetesLogo className="size-6" />} />
+              <IconBlock icon={<SlackLogo className="size-6" />} />
               <VerticalLine />
               <VerticalLine />
-              <IconBlock icon={<AWSLogo className="size-6" />} />
+              <IconBlock icon={<ElasticLogo className="size-6" />} />
             </div>
           </div>
           <div className="2 absolute -top-4 right-30 flex h-full flex-col items-center">
-            <IconBlock icon={<DockerLogo className="size-6" />} />
+            <IconBlock icon={<AnthropicLogo className="size-6" />} />
             <VerticalLine />
-            <IconBlock icon={<AlertIcon className="size-6" />} />
+            <IconBlock icon={<DatadogLogo className="size-6" />} />
           </div>
           <RightSideSVG />
-          <IconBlock icon={<GarnetLogo className="size-6" />} />
+          <IconBlock icon={<LinearLogo className="size-6" />} />
         </div>
       </motion.div>
     </>
