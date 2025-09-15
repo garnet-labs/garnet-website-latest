@@ -18,7 +18,7 @@ import {
   NativeToolsIntegrationSkeleton,
   TextToWorkflowBuilderSkeleton,
 } from "./skeletons";
-import { BoltIcon, RocketIcon, ShieldIcon, ShieldSplitIcon } from "@/icons/card-icons";
+import { BoltIcon, RocketIcon, ShieldIcon, ShieldSplitIcon, TelescopeIcon } from "@/icons/card-icons";
 
 type Tab = {
   title: string;
@@ -53,11 +53,11 @@ export const AgenticIntelligence = () => {
           </Card>
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
-              <BrainIcon />
+              <TelescopeIcon />
               <CardTitle>Automated threat intel → Detection recipes</CardTitle>
             </div>
             <CardDescription>
-            In the background, our system turns global threat intel into runtime protection. C2 domains are blocked at the DNS layer, while detection rules for cryptominers, container escapes, and privilege escalation are continuously updated.
+            Every new attack behavior discovered globally is reflected in your detections. From DNS-based C2 traffic to runc escapes and sudoers tampering, your rules are refreshed in real time, without manual effort.
             </CardDescription>
             <TextToWorkflowBuilderSkeleton />
           </Card>

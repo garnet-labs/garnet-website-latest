@@ -35,7 +35,7 @@ import { useState, useEffect } from "react";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import { LogoSVG } from "../logo";
 import { IconBlock } from "../common/icon-block";
-import { DevopsIcon } from "@/icons/card-icons";
+import { BellIcon, DevopsIcon } from "@/icons/card-icons";
 
 export const LLMModelSelectorSkeleton = () => {
   const sensors = [
@@ -84,7 +84,7 @@ export const LLMModelSelectorSkeleton = () => {
         <div className="h-3 w-3 rounded-full bg-green-500"></div>
       </div>
       <div className="mt-12 flex items-center gap-2">
-        <IntegrationsLogo />
+        <BrainIcon />
         <span className="text-charcoal-700 text-sm font-medium dark:text-neutral-200">
           Agent fleet
         </span>
@@ -497,7 +497,7 @@ export const NativeToolsIntegrationSkeleton = () => {
             <TextIconBlock icon={<WindowIcon />} text="network-policy.yaml">
               <MiddleSVG className="absolute top-2 -right-84" />
             </TextIconBlock>
-            <TextIconBlock icon={<DevopsIcon />} text="response-policy.yaml">
+            <TextIconBlock icon={<BellIcon />} text="response-policy.yaml">
               <BottomSVG className="absolute -right-84 bottom-2" />
             </TextIconBlock>
           </div>
