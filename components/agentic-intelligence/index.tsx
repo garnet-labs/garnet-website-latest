@@ -18,6 +18,7 @@ import {
   NativeToolsIntegrationSkeleton,
   TextToWorkflowBuilderSkeleton,
 } from "./skeletons";
+import { BoltIcon, RocketIcon, ShieldIcon, ShieldSplitIcon } from "@/icons/card-icons";
 
 type Tab = {
   title: string;
@@ -37,12 +38,12 @@ export const AgenticIntelligence = () => {
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-6 max-w-4xl px-2">
-          From CI/CD runners to containerized AI production workloads, Garnet provides runtime visibility and protection at the kernel. High-fidelity detections, automated intel-driven rules, and policy enforcement integrate seamlessly into your existing workflows.
+        From CI/CD runners to production clusters, Garnet provides deep runtime visibility and protection. High-fidelity detections, intel-driven recipes, and in-kernel enforcement integrate seamlessly into your workflows.
         </SubHeading>
         <div className="border-divide divide-divide mt-16 grid grid-cols-1 divide-y border-y md:grid-cols-2 md:divide-x">
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
-              <BrainIcon />
+              <RocketIcon />
               <CardTitle>Lightweight runtime agent</CardTitle>
             </div>
             <CardDescription>
@@ -52,7 +53,7 @@ export const AgenticIntelligence = () => {
           </Card>
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
-              <MouseBoxIcon />
+              <BrainIcon />
               <CardTitle>Automated threat intel → Detection recipes</CardTitle>
             </div>
             <CardDescription>
@@ -65,11 +66,11 @@ export const AgenticIntelligence = () => {
           <Card className="relative w-full max-w-none overflow-hidden">
             <div className="pointer-events-none absolute inset-0 h-full w-full bg-[radial-gradient(var(--color-dots)_1px,transparent_1px)] mask-radial-from-10% [background-size:10px_10px]"></div>
             <div className="flex items-center gap-2">
-              <NativeIcon />
+              <ShieldSplitIcon />
               <CardTitle>Kernel-level behavioral detection & response</CardTitle>
             </div>
             <CardDescription>
-              High-fidelity behavioral detections with deep context, mapped to MITRE ATT&CK and get alerted directly into channels of your choice through our rich API integrations. 
+              High-fidelity behavioral detections with deep context, mapped to MITRE ATT&CK incidents. Get alerted directly into tools and workflows of your choice through our rich API integrations. 
             </CardDescription>
             <NativeToolsIntegrationSkeleton />
           </Card>
@@ -77,32 +78,29 @@ export const AgenticIntelligence = () => {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <Card>
             <div className="flex items-center gap-2">
-              <FingerprintIcon />
-              <CardTitle>Behavioral Analysis</CardTitle>
+              <BoltIcon />
+              <CardTitle>Minimal overhead, massive scale</CardTitle>
             </div>
             <CardDescription>
-              No signatures needed. Detect zero-day attacks through abnormal
-              behavior patterns in real-time.
+            Lightweight eBPF agent runs with near-zero overhead. Protect your cloud-native workloads at scale without performance trade-offs.
             </CardDescription>
           </Card>
           <Card>
             <div className="flex items-center gap-2">
-              <RealtimeSyncIcon />
-              <CardTitle>Real-time Blocking</CardTitle>
+              <ShieldIcon />
+              <CardTitle>Detections with deep context</CardTitle>
             </div>
             <CardDescription>
-              Instantly terminate malicious processes and prevent lateral
-              movement before damage spreads.
+            Every detection is enriched with deep behavioral context to eliminate noise. Clear, actionable signals your team can trust.
             </CardDescription>
           </Card>
           <Card>
             <div className="flex items-center gap-2">
               <SDKIcon />
-              <CardTitle>Container Security</CardTitle>
+              <CardTitle>Stop threats instantly</CardTitle>
             </div>
             <CardDescription>
-              Protect Kubernetes workloads and Docker containers from runtime
-              attacks and container escapes.
+            Block malicious activity at the kernel before it spreads. Terminate cryptominers, access to C2 servers, and more in real time.
             </CardDescription>
           </Card>
         </div>

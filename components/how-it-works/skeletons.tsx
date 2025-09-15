@@ -7,7 +7,10 @@ import {
   SlackLogo,
   AzureLogo,
   DatadogLogo,
-  ElasticLogo
+  ElasticLogo,
+  KubernetesLogo,
+  GarnetDolphinLogo,
+  AlertIcon
 } from "@/icons/general";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -16,16 +19,17 @@ import { motion, useMotionValue, useTransform } from "motion/react";
 import { Card } from "../tech-card";
 import { Scale } from "../scale";
 import { LogoSVG } from "../logo";
-import { IntegrationsLogo } from "@/icons/bento-icons";
+import { BrainIcon, IntegrationsLogo, SDKIcon, RealtimeSyncIcon } from "@/icons/bento-icons";
+import { DevopsIcon, ShieldIcon, ShieldSplitIcon } from "@/icons/card-icons";
 
 export const DesignYourWorkflowSkeleton = () => {
   return (
     <div className="mt-12 flex flex-col items-center">
       <div className="relative">
         <Card
-          title="Slack"
-          subtitle="#standups"
-          logo={<SlackLogo />}
+          title="Jibril"
+          subtitle="v2.6"
+          logo={<BrainIcon />}
           cta="Connected"
           tone="default"
         />
@@ -36,26 +40,26 @@ export const DesignYourWorkflowSkeleton = () => {
 
       <div className="mt-12 flex flex-row gap-4.5">
         <Card
-          title="Anthropic"
-          subtitle="Claude 4"
-          logo={<AnthropicLogo />}
-          cta="UI Generator"
-          tone="danger"
+          title="payments-svc"
+          subtitle="staging"
+          logo={<KubernetesLogo />}
+          cta="Online"
+          tone="default"
           delay={0.2}
         />
         <Card
-          title="Meta"
-          subtitle="Llama 2"
-          logo={<MetaLogo />}
-          cta="Text Generator"
+          title="inference-svc"
+          subtitle="production"
+          logo={<KubernetesLogo />}
+          cta="Online"
           tone="default"
           delay={0.4}
         />
         <Card
-          title="OpenAI"
-          subtitle="GPT-5"
-          logo={<OpenAILogo />}
-          cta="Code Generator"
+          title="gh-runner-12"
+          subtitle="build"
+          logo={<KubernetesLogo />}
+          cta="Offline"
           tone="success"
           delay={0.6}
         />
@@ -65,7 +69,7 @@ export const DesignYourWorkflowSkeleton = () => {
 };
 
 export const ConnectYourTooklsSkeleton = () => {
-  const text = `Reverse shell attempt observed in container auth-service. Garnet AI escalated severity to High.`;
+  const text = `Outbound C2 connection attempt blocked via DNS blocklist in inference-svc. Severity escalated to CRITICAL.`;
   const [mounted, setMounted] = useState(false);
   const randomWidth = useMemo(() => Math.random() * 100, [mounted]);
 
@@ -85,12 +89,12 @@ export const ConnectYourTooklsSkeleton = () => {
       >
         <div className="absolute -top-4 -right-4 flex h-14 w-14 items-center justify-center rounded-lg bg-white shadow-xl">
           <Scale />
-          <OpenAILogo className="relative z-20 h-8 w-8" />
+          <BrainIcon className="relative z-20 h-8 w-8" />
         </div>
         <div className="mt-12 flex items-center gap-2">
-          <IntegrationsLogo />
+          {/* <AlertIcon /> */}
           <span className="text-charcoal-700 text-sm font-medium dark:text-neutral-200">
-            Threat detection
+            Threat detected
           </span>
         </div>
         <DivideX className="mt-2" />
@@ -161,10 +165,10 @@ export const ConnectYourTooklsSkeleton = () => {
       >
         <div className="absolute -top-4 -left-4 flex h-14 w-14 items-center justify-center rounded-lg bg-white shadow-xl dark:bg-neutral-800">
           <Scale />
-          <LogoSVG className="relative z-20 h-8 w-8" />
+          <SDKIcon className="relative z-20 h-8 w-8" />
         </div>
         <div className="mt-12 flex items-center gap-2">
-          <IntegrationsLogo className="dark:text-neutral-200" />
+          {/* <IntegrationsLogo className="dark:text-neutral-200" /> */}
           <span className="text-charcoal-700 text-xs font-medium md:text-sm dark:text-neutral-200">
             Integrations
           </span>
@@ -253,28 +257,28 @@ export const DeployAndScaleSkeleton = () => {
 
   // Define deploy cards data for reusability
   const deployCards = [
-    { title: "python modified /etc/sudoers", subtitle: "2h ago", branch: "master" },
+    { title: "python modified /etc/sudoers", subtitle: "2h ago", branch: "master", variant: "danger" as const },
     {
-      title: "curl connecting to attacker.com",
+      title: "curl connecting to attacker-c2.com",
       subtitle: "10m ago",
       branch: "web-123",
       variant: "danger" as const,
     },
-    { title: "bash executed /tmp/malware.sh", subtitle: "45m ago", branch: "feature/auth" },
+    { title: "bash executed /tmp/malware.sh", subtitle: "45m ago", branch: "feature/auth", variant: "danger" as const },
     {
-      title: "sh ran chmod +x /tmp/agent",
+      title: "xmrig miner process spawned",
       subtitle: "1h ago",
       branch: "api-7f2",
       variant: "danger" as const,
     },
     {
-      title: "bash modified /usr/bin/ssh",
+      title: "node changed permissions on /bin/sudo",
       subtitle: "2h ago",
       branch: "worker-a1",
       variant: "warning" as const,
     },
     {
-      title: "python3 read /root/.ssh/id_rsa",
+      title: "python read /root/.ssh/id_rsa",
       subtitle: "3h ago",
       branch: "payments-svc",
       variant: "warning" as const,
@@ -283,13 +287,13 @@ export const DeployAndScaleSkeleton = () => {
       title: "python connected to 203.0.113.50:8080",
       subtitle: "4h ago",
       branch: "feat/api",
-      variant: "danger" as const,
+      variant: "warning" as const,
     },
     {
-      title: "python3 listened on 0.0.0.0:9001",
+      title: "node spawned reverse shell connection",
       subtitle: "5h ago",
       branch: "feat/search",
-      variant: "warning" as const,
+      variant: "danger" as const,
     },
     {
       title: "curl wrote /tmp/.curlrc",
@@ -301,16 +305,16 @@ export const DeployAndScaleSkeleton = () => {
       title: "python opened /etc/shadow",
       subtitle: "7h ago",
       branch: "fix/perf",
-      variant: "warning" as const,
+      variant: "default" as const,
     },
     {
       title: "node read /.aws/credentials",
       subtitle: "8h ago",
       branch: "main",
-      variant: "warning" as const,
+      variant: "default" as const,
     },
     {
-      title: "bash established reverse shell to 192.0.2.13:4444",
+      title: "python attempted DNS lookup for pool.xmrig.com",
       subtitle: "9h ago",
       branch: "feat/analytics",
       variant: "danger" as const,
@@ -450,7 +454,7 @@ const DeployCard = ({
           )}
           style={variant === "danger" ? {backgroundColor: '#E64F4B20'} : {}}
         >
-          <ForkIcon
+          <ShieldSplitIcon
             className={cn(
               "h-4 w-4",
               variant === "default" && "text-gray-500",

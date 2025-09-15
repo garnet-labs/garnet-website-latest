@@ -23,28 +23,28 @@ type Tab = {
 export const HowItWorks = () => {
   const tabs = [
     {
-      title: "Install Jibril sensor",
+      title: "One install. Full coverage",
       description:
-        "Add our lightweight eBPF sensor to your GitHub Actions or container runtime in under 5 minutes",
+        "Protect build, staging, and production Kubernetes workloads at scale with a single Helm command.",
       icon: FirstIcon,
       id: "install",
       skeleton: <DesignYourWorkflowSkeleton />,
     },
     {
-      title: "Detect abnormal behavior",
+      title: "Catch real attack behaviors",
       description:
-        "Monitor runtime execution for malicious patterns like reverse shells, data exfiltration, and cryptominers",
+        "Detect reverse shells, container escapes, data exfiltration, and cryptominers with kernel-level fidelity.",
       icon: SecondIcon,
       id: "detect",
-      skeleton: <ConnectYourTooklsSkeleton />,
+      skeleton: <DeployAndScaleSkeleton />,
     },
     {
-      title: "Block threats in real-time",
+      title: "Respond in real-time",
       description:
-        "Automatically terminate malicious processes and prevent supply chain attacks before damage occurs",
+        "Block malicious activity instantly and stream enriched, MITRE-mapped incidents into your workflows.",
       icon: ThirdIcon,
       id: "block",
-      skeleton: <DeployAndScaleSkeleton />,
+      skeleton: <ConnectYourTooklsSkeleton />,
     },
   ];
 
@@ -65,11 +65,10 @@ export const HowItWorks = () => {
     <Container className="border-divide border-x">
       <div className="flex flex-col items-center pt-16">
         <Badge text="How it works" />
-        <SectionHeading className="mt-4">Deploy in minutes</SectionHeading>
+        <SectionHeading className="mt-4">From install to protection in minutes</SectionHeading>
 
-        <SubHeading as="p" className="mx-auto mt-6 max-w-lg">
-          Zero-config deployment. Install our sensor and get instant protection
-          against supply chain attacks and runtime threats.
+        <SubHeading as="p" className="mx-auto mt-6 max-w-2xl">
+        One helm install deploys our lightweight runtime agent, across your K8s workloads. Detect high-fidelity runtime threats and respond instantly with blocking and alerts into your existing workflows.
         </SubHeading>
         {/* Desktop Tabs */}
         <div className="border-divide divide-divide mt-16 hidden w-full grid-cols-2 divide-x border-t lg:grid">
