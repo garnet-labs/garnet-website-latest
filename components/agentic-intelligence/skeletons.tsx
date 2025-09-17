@@ -479,7 +479,16 @@ const SystemMessage = ({
 export const NativeToolsIntegrationSkeleton = () => {
   return (
     <>
-      <motion.div className="relative mx-auto my-12 h-full max-h-70 min-h-80 max-w-[67rem] grid-cols-2 p-4 grid scale-[0.6] sm:scale-[0.7] md:scale-[0.8] lg:scale-[1]">
+      <div className="relative mx-auto my-24 h-full w-full scale-[0.8] sm:scale-[0.9] md:scale-[1] lg:hidden">
+        <Image
+          src="/illustrations/architecture.png"
+          alt="Native Tools Integration"
+          width={1400}
+          height={400}
+          className="rounded-lg"
+        />
+      </div>
+      <motion.div className="relative mx-auto my-12 hidden h-full max-h-70 min-h-80 max-w-[67rem] grid-cols-2 p-4 lg:grid">
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-10">
             <TextIconBlock icon={<CodeIcon />} text="detection-config.yaml">
