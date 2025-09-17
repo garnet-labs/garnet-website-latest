@@ -11,13 +11,15 @@ import {
   ReuseBrainIcon,
   ScreenCogIcon,
   BellIcon,
+  TelescopeIcon,
+  BoltIcon,
+  ShieldSplitIcon,
 } from "@/icons/card-icons";
 import { Scale } from "./scale";
 import { AnimatePresence, motion } from "motion/react";
-import { RealtimeSyncIcon } from "@/icons/bento-icons";
+import { BrainIcon, RealtimeSyncIcon } from "@/icons/bento-icons";
 import { DivideX } from "./divide";
-import { LogoSVG } from "./logo";
-import { OpenAILogo, SlackLogo } from "@/icons/general";
+import { OpenAILogo, SlackLogo, KubernetesLogo } from "@/icons/general";
 import { IconBlock } from "./common/icon-block";
 import { HorizontalLine } from "./common/horizontal-line";
 import { VerticalLine } from "./common/vertical-line";
@@ -28,37 +30,37 @@ export const Benefits = () => {
     {
       title: "Deploy in Minutes",
       description:
-        "Zero-config installation. Add our GitHub Action or container sensor and start protecting immediately",
+        "One Helm install, instant runtime visibility. Protect build pipelines, staging, and production without extra config.",
       icon: <RocketIcon className="text-brand size-6" />,
     },
     {
-      title: "Zero False Positives",
+      title: "Zero false positives",
       description:
-        "Behavioral analysis means we only alert on actual malicious activity, not signatures or heuristics",
-      icon: <RealtimeSyncIcon className="text-brand size-6" />,
-    },
-    {
-      title: "Scale Infinitely",
-      description:
-        "eBPF sensors scale with your infrastructure. No performance degradation as you grow",
-      icon: <GraphIcon className="text-brand size-6" />,
-    },
-    {
-      title: "Real-time Protection",
-      description:
-        "Block attacks as they happen. Don't wait for post-incident forensics to find out you were compromised",
-      icon: <ReuseBrainIcon className="text-brand size-6" />,
-    },
-    {
-      title: "Complete Visibility",
-      description:
-        "See everything happening in your pipelines and containers. Full audit trail for compliance",
+        "Deep behavioral context cuts through the noise, surfacing only the incidents that matter",
       icon: <ShieldIcon className="text-brand size-6" />,
     },
     {
-      title: "Developer Friendly",
+      title: "Scale without overhead",
       description:
-        "Built by engineers for engineers. No security expertise required to deploy and manage",
+        "eBPF-powered agents scale with your infrastructure while keeping performance impact near zero.",
+      icon: <GraphIcon className="text-brand size-6" />,
+    },
+    {
+      title: "Real-time protection",
+      description:
+        "Block malicious activity instantly, from cryptominers to C2 traffic, before damage spreads.",
+      icon: <ShieldSplitIcon className="text-brand size-6" />,
+    },
+    {
+      title: "Complete visibility",
+      description:
+        "See every workload across CI/CD pipelines and clusters, with an audit trail for compliance and investigations.",
+      icon: <TelescopeIcon className="text-brand size-6" />,
+    },
+    {
+      title: "Developer friendly",
+      description:
+        "Built for platform and infra engineers. Easy to deploy, simple to manage, no tuning required.",
       icon: <ScreenCogIcon className="text-brand size-6" />,
     },
   ];
@@ -67,11 +69,11 @@ export const Benefits = () => {
       <div className="relative flex flex-col items-center">
         <Badge text="Benefits" />
         <SectionHeading className="mt-4">
-          Why engineering teams choose Garnet
+          Why platform teams choose Garnet
         </SectionHeading>
 
-        <SubHeading as="p" className="mx-auto mt-6 max-w-lg">
-          Security that doesn't slow you down. Protection that actually works.
+        <SubHeading as="p" className="mx-auto mt-2 max-w-lg">
+        Purpose-built for platform scale, Garnet gives teams runtime protection with low overhead, deep context, and seamless integrations.
         </SubHeading>
       </div>
       <div className="mt-20 grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -128,7 +130,11 @@ export const Benefits = () => {
 };
 
 const MiddleCard = () => {
-  const texts = ["Meeting created", "Chat history saved", "You talking to me"];
+  const texts = [
+    "Rogue DNS request blocked", 
+    "File modification detected", 
+    "Xmrig miner process terminated",
+  ];
   const [activeText, setActiveText] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -141,13 +147,13 @@ const MiddleCard = () => {
       <div className="absolute inset-0 bg-[radial-gradient(var(--color-dots)_1px,transparent_1px)] mask-radial-from-10% [background-size:10px_10px] shadow-xl"></div>
 
       <div className="flex items-center justify-center">
-        <IconBlock icon={<OpenAILogo className="size-6" />} />
+        <IconBlock icon={<BrainIcon className="size-6" />} />
         <HorizontalLine />
         <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-md bg-gray-200 p-px shadow-xl dark:bg-neutral-700">
           <div className="absolute inset-0 scale-[1.4] animate-spin rounded-full bg-conic [background-image:conic-gradient(at_center,transparent,var(--color-blue-500)_20%,transparent_30%)] [animation-duration:2s]"></div>
           <div className="via-brand absolute inset-0 scale-[1.4] animate-spin rounded-full bg-conic [background-image:conic-gradient(at_center,transparent,var(--color-brand)_20%,transparent_30%)] [animation-delay:1s] [animation-duration:2s]"></div>
           <div className="relative z-20 flex h-full w-full items-center justify-center rounded-[5px] bg-white dark:bg-neutral-900">
-            <LogoSVG />
+            <KubernetesLogo className="size-8" />
           </div>
         </div>
         <HorizontalLine />
@@ -187,15 +193,20 @@ const MiddleCard = () => {
           <div className="flex h-full flex-row">
             <div className="h-full w-14 bg-gray-200 dark:bg-neutral-800" />
             <motion.div className="w-full gap-y-4 p-4">
-              <h2 className="text-sm font-semibold text-gray-800 dark:text-neutral-300">
-                Dashboard
-              </h2>
+              <div className="space-y-1">
+                <h2 className="text-sm font-medium text-gray-800 dark:text-neutral-300">
+                  Detections
+                </h2>
+                <p className="text-xs text-gray-500 font-mono">
+                  k8s-prod-cluster • Last 24h
+                </p>
+              </div>
 
               <div className="mt-4 flex flex-col gap-y-3 mask-b-from-50%">
                 {[
-                  { label: "API Calls", width: 85 },
-                  { label: "Success Rate", width: 92 },
-                  { label: "Workflows", width: 65 },
+                  { label: "High (8)", width: 25 },
+                  { label: "Medium (23)", width: 40 },
+                  { label: "Low (20)", width: 30 },
                 ].map((item, index) => (
                   <div key={item.label} className="space-y-1">
                     <div className="flex items-center justify-between text-xs">
