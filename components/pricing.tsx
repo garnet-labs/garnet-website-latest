@@ -79,7 +79,7 @@ export const Pricing = () => {
                     <Price
                       value={activeTier === "monthly" ? tier.monthly : tier.yearly}
                     />
-                    <span className="ml-2 text-sm font-normal">/seat</span>
+                    <span className="ml-2 text-sm font-normal">/node</span>
                   </>
                 )}
               </span>

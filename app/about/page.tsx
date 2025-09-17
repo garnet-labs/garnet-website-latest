@@ -29,18 +29,18 @@ export default function AboutPage() {
       <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-10 pb-10 md:px-8 md:pt-32 md:pb-20">
         <div className="grid grid-cols-1 gap-20 md:grid-cols-2">
           <div className="flex flex-col items-start justify-start">
-            <Badge text="Our Story" />
+            <Badge text="Our Journey" />
             <Heading className="mt-4 text-left">
-              Securing modern infrastructure
+              We have felt the pain firsthand.
             </Heading>
             <SubHeading className="mt-6 mr-auto text-left">
-              We believe security should be invisible, automatic, and effective. Founded by engineers who saw 
-              too many breaches happen despite teams using every scanner and SAST tool available.
+              We're a team of builders, hackers, and OSS maintainers with a mission to combine world-class infrastructure, developer experience, and security expertise to empower modern teams pushing the frontier.
               <br /> <br />
-              The problem? Traditional security tools look at code, not behavior. They miss supply chain attacks, 
-              zero-days, and malicious dependencies that only reveal themselves at runtime. We built Garnet to 
-              detect and block these threats in real-time, using eBPF sensors that see everything without slowing 
-              anything down.
+              Garnet was born out of hard lessons. When our founders Umar and Farrukh, friends for over 15 years, experienced a devastating cryptomining supply chain attack at their previous ML infrastructure startup, the limits of traditional security became painfully clear. They had static and vulnerability visibility, but were still blind as a miner ran inside their environment from a compromised container. It took weeks to backtrace the attack, cost them a significant penalty, and left them wishing they'd had runtime monitoring in place, not just to finally understand what was happening, but to stop the attack in its tracks.
+              <br /> <br />
+              That moment became the spark for Garnet: runtime security built with a deep understanding of developers' needs, modern stacks, and emerging threats.
+              <br /> <br />
+              Our engineering team brings unmatched expertise in eBPF and observability infrastructure. As core maintainers of Aqua Tracee and Fluent Bit, and with experience building and scaling critical systems at Red Hat, Canonical, IBM, and Chronosphere, we know what it takes to deliver next-generation runtime security at scale.
             </SubHeading>
           </div>
           <div className="border-divide rounded-3xl border p-2">
@@ -53,7 +53,7 @@ export default function AboutPage() {
             />
           </div>
         </div>
-        <div className="mt-20 flex w-full flex-col items-center lg:flex-row">
+{/* <div className="mt-20 flex w-full flex-col items-center lg:flex-row">
           <h2 className="mb-4 min-w-40 text-center font-mono text-sm tracking-tight text-neutral-500 uppercase lg:mb-0 lg:text-left dark:text-neutral-400">
             As featured in
           </h2>
@@ -87,9 +87,9 @@ export default function AboutPage() {
               className="h-6 w-auto object-contain dark:invert dark:filter"
             />
           </div>
-        </div>
+        </div> */}
       </Container>
-      <Container className="border-divide border-x border-t p-4 py-20 md:px-8 md:py-40">
+{/* <Container className="border-divide border-x border-t p-4 py-20 md:px-8 md:py-40">
         <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2">
           <div className="flex flex-col items-start justify-start">
             <Badge text="Journey and Values" />
@@ -108,16 +108,16 @@ export default function AboutPage() {
           </div>
           <InformationBlock />
         </div>
-      </Container>
+      </Container> */}
       <Container className="border-divide flex flex-col items-center border-x border-b pb-20">
         <div className="flex flex-col items-center justify-center px-4 py-10 md:px-8 md:py-20">
-          <Badge text="Investors" />
+          {/* <Badge text="Investors" /> */}
           <SectionHeading className="mt-4 text-center">
             Backed by leading security investors
           </SectionHeading>
           <SubHeading className="mt-6 max-w-2xl text-center">
             Trusted by world-class investors who believe in our mission to make runtime 
-            security invisible and effective for every engineering team.
+            security invisible and effective for modern platform teams.
           </SubHeading>
           
           {/* Institutional Investors */}
