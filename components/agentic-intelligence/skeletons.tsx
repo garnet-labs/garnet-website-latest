@@ -479,13 +479,20 @@ const SystemMessage = ({
 export const NativeToolsIntegrationSkeleton = () => {
   return (
     <>
-      <div className="relative mx-auto my-24 h-full w-full scale-[0.8] sm:scale-[0.9] md:scale-[1] lg:hidden">
+      <div className="relative mx-auto my-12 flex h-full w-full items-center justify-center px-4 scale-[0.9] sm:scale-[1] md:scale-[1.1] lg:hidden">
+        <Image
+          src="/illustrations/architecture_white.png"
+          alt="Native Tools Integration"
+          width={1600}
+          height={500}
+          className="rounded-lg block dark:hidden w-full h-auto max-w-full"
+        />
         <Image
           src="/illustrations/architecture.png"
           alt="Native Tools Integration"
-          width={1400}
-          height={400}
-          className="rounded-lg"
+          width={1600}
+          height={500}
+          className="rounded-lg hidden dark:block w-full h-auto max-w-full"
         />
       </div>
       <motion.div className="relative mx-auto my-12 hidden h-full max-h-70 min-h-80 max-w-[67rem] grid-cols-2 p-4 lg:grid">
