@@ -4,15 +4,12 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import {
   AnthropicLogo,
-  AppleIcon,
-  FacebookIcon,
-  GoogleIcon,
+  DatadogLogo,
+  ElasticLogo,
+  GitHubActionsLogo,
+  KubernetesLogo,
   LinearLogo,
-  MetaLogo,
-  NotionLogo,
-  OpenAILogo,
   SlackLogo,
-  SupabaseLogo,
 } from "@/icons/general";
 import { Container } from "./container";
 import { SectionHeading } from "./seciton-heading";
@@ -34,14 +31,14 @@ export const CTA = () => {
     <Container className="border-divide relative flex min-h-60 flex-col items-center justify-center overflow-hidden border-x px-4 py-4 md:min-h-120">
       <CTAOrbit className="absolute inset-x-0 -top-120 mask-b-from-30%" />
       <SectionHeading className="relative z-10 text-center lg:text-6xl">
-        Secure your pipelines <br /> in minutes
+        Secure your runtime, <br /> <span className="text-brand">protect your business</span>
       </SectionHeading>
       <div className="relative z-20 mt-4 flex items-center gap-4">
-        <Button as={Link} href="/sign-up">
-          Deploy Jibril
+        <Button as={Link} href="https://dashboard.garnet.ai">
+          Start monitoring
         </Button>
-        <Button variant="secondary" as={Link} href="/contact">
-          Talk to sales
+        <Button variant="secondary" as={Link} href="https://cal.com/team/garnet/intro?duration=30&overlayCalendar=true">
+          Book demo
         </Button>
       </div>
     </Container>
@@ -56,19 +53,13 @@ export const CTAOrbit: React.FC<CTAOrbitProps> = ({
   numRings = 3,
 }) => {
   const logos = [
-    SupabaseLogo,
-    OpenAILogo,
-    MetaLogo,
-    SlackLogo,
-    NotionLogo,
-    LinearLogo,
+    KubernetesLogo,
+    DatadogLogo,
     AnthropicLogo,
-    SupabaseLogo,
-    OpenAILogo,
-    MetaLogo,
-    GoogleIcon,
-    FacebookIcon,
-    AppleIcon,
+    LinearLogo,
+    SlackLogo,
+    GitHubActionsLogo,
+    ElasticLogo,
   ];
   const total = logos.length;
 

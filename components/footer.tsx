@@ -4,36 +4,38 @@ import { Container } from "./container";
 import { Logo } from "./logo";
 import { SubHeading } from "./subheading";
 import { SendIcon } from "@/icons/bento-icons";
+import { SOC2Badge } from "@/icons/general";
 
 export const Footer = () => {
   const product = [
     {
-      title: "Jibril (Free)",
-      href: "/sign-up",
+      title: "Jibril",
+      href: "https://jibril.garnet.ai/",
     },
     {
-      title: "GitHub Actions",
-      href: "#",
+      title: "Docs",
+      href: "https://docs.garnet.ai",
     },
-    {
-      title: "Kubernetes",
-      href: "#",
-    },
-    {
-      title: "Docker",
-      href: "#",
-    },
-    {
-      title: "API",
-      href: "#",
-    },
+    // {
+    //   title: "GitHub Actions",
+    //   href: "#",
+    // },
+    // {
+    //   title: "Kubernetes",
+    //   href: "#",
+    // },
+    // {
+    //   title: "Docker",
+    //   href: "#",
+    // },
+    // {
+    //   title: "API",
+    //   href: "#",
+    // },
   ];
 
   const company = [
-    {
-      title: "Docs",
-      href: "https://docs.garnet.sh",
-    },
+
     {
       title: "Pricing",
       href: "/pricing",
@@ -41,6 +43,13 @@ export const Footer = () => {
     {
       title: "About",
       href: "/about",
+    },
+  ];
+
+  const security = [
+    {
+      title: "Trust Center",
+      href: "https://app.vanta.com/garnet.ai/trust/i63921ahbwt5v5ytju14n0",
     },
   ];
 
@@ -53,10 +62,6 @@ export const Footer = () => {
       title: "Terms of Service",
       href: "/terms-of-service",
     },
-    {
-      title: "Cookie Policy",
-      href: "/cookie-policy",
-    },
   ];
   return (
     <Container>
@@ -64,9 +69,11 @@ export const Footer = () => {
         <div className="mb-6 sm:col-span-2 md:col-span-4 lg:col-span-3">
           <Logo />
           <SubHeading as="p" className="mt-4 max-w-lg text-left">
-            Runtime security for modern engineering teams
+            Runtime security for modern platform teams.
           </SubHeading>
-          <Button className="mt-4 mb-8 lg:mb-0">Deploy Jibril</Button>
+          {/* <Link href="https://dashboard.garnet.ai">
+            <Button className="mt-4 mb-8 lg:mb-0">Start Monitoring</Button>
+          </Link> */}
         </div>
         <div className="col-span-1 mb-4 flex flex-col gap-2 md:col-span-1 md:mb-0">
           <p className="text-sm font-medium text-gray-600">Product</p>
@@ -93,6 +100,29 @@ export const Footer = () => {
           ))}
         </div>
         <div className="col-span-1 mb-4 flex flex-col gap-2 md:col-span-1 md:mb-0">
+          <p className="text-sm font-medium text-gray-600">Security</p>
+          {security.map((item) => (
+            <Link
+              href={item.href}
+              key={item.title}
+              className="text-footer-link my-2 text-sm font-medium"
+            >
+              {item.title}
+            </Link>
+          ))}
+          {/* SOC 2 Badge */}
+          <div className="mt-1 flex justify-start">
+            <Link
+              href="https://app.vanta.com/garnet.ai/trust/i63921ahbwt5v5ytju14n0"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="SOC 2 Type 2 Certified by Vanta"
+            >
+              <SOC2Badge className="h-auto w-16" />
+            </Link>
+          </div>
+        </div>
+        <div className="col-span-1 mb-4 flex flex-col gap-2 md:col-span-1 md:mb-0">
           <p className="text-sm font-medium text-gray-600">Legal</p>
           {legal.map((item) => (
             <Link
@@ -104,7 +134,7 @@ export const Footer = () => {
             </Link>
           ))}
         </div>
-        <div className="col-span-1 mb-4 flex flex-col items-start md:col-span-1 md:mb-0 lg:col-span-2">
+        {/* <div className="col-span-1 mb-4 flex flex-col items-start md:col-span-1 md:mb-0 lg:col-span-2">
           <p className="text-footer-link text-sm font-medium">Newsletter</p>
           <div className="mt-2 flex w-full items-center rounded-xl border border-gray-300 bg-gray-200 p-1 placeholder-gray-600 dark:border-neutral-700 dark:bg-neutral-800">
             <input
@@ -122,15 +152,15 @@ export const Footer = () => {
           >
             Get the latest security updates and threat intelligence.
           </SubHeading>
-        </div>
+        </div> */}
       </div>
       <div className="my-4 flex flex-col items-center justify-between px-4 pt-8 md:flex-row">
         <p className="text-footer-link text-sm">
-          © 2025 Garnet. All rights reserved.
+          © 2025 Garnet Labs Inc. All rights reserved.
         </p>
         <div className="mt-4 flex items-center gap-4 md:mt-0">
           <Link
-            href="https://twitter.com/garnetsec"
+            href="https://x.com/garnet_labs"
             className="text-footer-link transition-colors hover:text-gray-900"
           >
             <svg
@@ -147,7 +177,7 @@ export const Footer = () => {
             </svg>
           </Link>
           <Link
-            href="https://linkedin.com/company/garnet-security"
+            href="https://linkedin.com/company/garnetlabs"
             className="text-footer-link transition-colors hover:text-gray-900"
           >
             <svg
@@ -166,7 +196,7 @@ export const Footer = () => {
             </svg>
           </Link>
           <Link
-            href="https://github.com/garnet-security"
+            href="https://github.com/garnet-org"
             className="text-footer-link transition-colors hover:text-gray-900"
           >
             <svg

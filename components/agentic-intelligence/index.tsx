@@ -54,10 +54,10 @@ export const AgenticIntelligence = () => {
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
               <TelescopeIcon />
-              <CardTitle>Automated threat intel → Detection recipes</CardTitle>
+              <CardTitle>Managed detections, out of the box</CardTitle>
             </div>
             <CardDescription>
-            Every new attack behavior discovered globally is reflected in your detections. From DNS-based C2 traffic to runc escapes and sudoers tampering, your rules are refreshed in real time, without manual effort.
+            From C2 traffic to file tampering and privilege escalations, you get continuously updated detection rules built from our in-house threat intelligence. 
             </CardDescription>
             <TextToWorkflowBuilderSkeleton />
           </Card>
@@ -87,7 +87,7 @@ export const AgenticIntelligence = () => {
           </Card>
           <Card>
             <div className="flex items-center gap-2">
-              <ShieldIcon />
+              <ShieldSplitIcon />
               <CardTitle>Detections with deep context</CardTitle>
             </div>
             <CardDescription>
@@ -96,7 +96,7 @@ export const AgenticIntelligence = () => {
           </Card>
           <Card>
             <div className="flex items-center gap-2">
-              <SDKIcon />
+              <ShieldIcon />
               <CardTitle>Stop threats instantly</CardTitle>
             </div>
             <CardDescription>

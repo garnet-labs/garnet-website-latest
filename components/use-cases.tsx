@@ -11,47 +11,50 @@ import {
   DatabaseIcon,
   WalletIcon,
   GraphIcon,
+  ShieldSplitIcon,
+  BoltIcon,
 } from "@/icons/card-icons";
 import { Scale } from "./scale";
 import { motion } from "motion/react";
+import { NativeIcon } from "@/icons/bento-icons";
 
 export const UseCases = () => {
   const useCases = [
     {
       title: "Supply Chain Attacks",
       description:
-        "Detect and block malicious packages before they compromise your build pipeline",
+        "Stop malicious behaviors triggered by compromised dependencies or build artifacts running in your environment.",
       icon: <TruckIcon className="text-brand size-6" />,
     },
     {
-      title: "Shadow Containers",
+      title: "Privilege Escalation",
       description:
-        "Identify unauthorized containers and cryptominers running in your infrastructure",
-      icon: <DevopsIcon className="text-brand size-6" />,
+        "Detect and block attempts to gain elevated privileges, including sudoers tampering and container breakout exploits.",
+      icon: <ShieldSplitIcon className="text-brand size-6" />,
     },
     {
-      title: "Credential Theft",
+      title: "Cryptomining",
       description:
-        "Prevent secrets and API keys from being exfiltrated during CI/CD execution",
+        "Terminate unauthorized cryptominer processes and block connections to mining pools in real time.",
       icon: <WalletIcon className="text-brand size-6" />,
     },
     {
-      title: "Container Escapes",
+      title: "Command & Control (C2) Traffic",
       description:
-        "Block privilege escalation attempts and container breakout exploits in real-time",
-      icon: <PhoneIcon className="text-brand size-6" />,
+        "Prevent DNS and IP communication with attacker-controlled servers before persistence is established.",
+      icon: <NativeIcon className="text-brand size-6" />,
     },
     {
       title: "Data Exfiltration",
       description:
-        "Monitor and prevent unauthorized data transfers to external destinations",
+        "Monitor and block unauthorized transfers of secrets, credentials, or sensitive data to external destinations.",
       icon: <DatabaseIcon className="text-brand size-6" />,
     },
     {
-      title: "Reverse Shells",
+      title: "Vulnerability Exploits",
       description:
-        "Detect and terminate backdoors before attackers establish persistence",
-      icon: <GraphIcon className="text-brand size-6" />,
+        "Identify and stop runtime exploitation of known and zero-day vulnerabilities before they spread laterally.",
+      icon: <BoltIcon className="text-brand size-6" />,
     },
   ];
   const [activeUseCase, setActiveUseCase] = useState<number | null>(null);
@@ -60,11 +63,11 @@ export const UseCases = () => {
       <div className="relative flex flex-col items-center py-20">
         <Badge text="Use Cases" />
         <SectionHeading className="mt-4">
-          Protection against modern threats
+          Protection against modern runtime threats
         </SectionHeading>
 
-        <SubHeading as="p" className="mx-auto mt-6 max-w-lg">
-          Comprehensive runtime security coverage for the attacks that matter most
+        <SubHeading as="p" className="mx-auto mt-2 max-w-lg">
+          Comprehensive runtime security against the sophisticated attacker. 
         </SubHeading>
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">

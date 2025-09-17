@@ -102,10 +102,10 @@ const MobileNav = ({ items }: { items: { title: string; href: string }[] }) => {
                 <Button
                   onClick={() => setIsOpen(false)}
                   as={Link}
-                  href="/sign-up"
+                  href="https://dashboard.garnet.ai"
                   className="w-full"
                 >
-                  Deploy Jibril
+                  Start monitoring
                 </Button>
               </div>
             </div>
@@ -137,11 +137,11 @@ const DesktopNav = ({
       </div>
       <div className="flex items-center gap-2">
         <ModeToggle />
-        <Button variant="secondary" as={Link} href="https://calendly.com/garnet-security/demo">
+        <Button variant="secondary" as={Link} href="https://cal.com/team/garnet/intro?duration=30">
           Book Demo
         </Button>
-        <Button as={Link} href="/sign-up">
-          Deploy Jibril
+        <Button as={Link} href="https://dashboard.garnet.ai">
+          Start monitoring
         </Button>
       </div>
     </div>
@@ -181,11 +181,11 @@ const FloatingNav = ({
       </div>
       <div className="flex items-center gap-2">
         <ModeToggle />
-        <Button variant="secondary" as={Link} href="https://calendly.com/garnet-security/demo">
+        <Button variant="secondary" as={Link} href="https://cal.com/team/garnet/intro?duration=30">
           Book Demo
         </Button>
-        <Button as={Link} href="/sign-up">
-          Deploy Jibril
+        <Button as={Link} href="https://dashboard.garnet.ai">
+          Start monitoring
         </Button>
       </div>
     </motion.div>
