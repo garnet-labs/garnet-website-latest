@@ -93,7 +93,7 @@ export const UseCases = () => {
                 <h3 className="mt-4 mb-2 text-lg font-medium">
                   {useCase.title}
                 </h3>
-                <p className="text-gray-600">{useCase.description}</p>
+                <p className="text-gray-600 dark:text-neutral-300">{useCase.description}</p>
               </div>
             </div>
           ))}
