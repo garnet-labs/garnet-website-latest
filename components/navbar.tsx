@@ -98,7 +98,16 @@ const MobileNav = ({ items }: { items: { title: string; href: string }[] }) => {
                   </motion.div>
                 </Link>
               ))}
-              <div className="mt-4 p-4">
+              <div className="mt-4 flex flex-col gap-3 p-4">
+                <Button
+                  onClick={() => setIsOpen(false)}
+                  as={Link}
+                  href="https://cal.com/team/garnet/intro?duration=30"
+                  className="w-full"
+                  variant="secondary"
+                >
+                  Book demo
+                </Button>
                 <Button
                   onClick={() => setIsOpen(false)}
                   as={Link}
@@ -138,7 +147,7 @@ const DesktopNav = ({
       <div className="flex items-center gap-2">
         <ModeToggle />
         <Button variant="secondary" as={Link} href="https://cal.com/team/garnet/intro?duration=30">
-          Book Demo
+          Book demo
         </Button>
         <Button as={Link} href="https://dashboard.garnet.ai">
           Start monitoring
@@ -182,7 +191,7 @@ const FloatingNav = ({
       <div className="flex items-center gap-2">
         <ModeToggle />
         <Button variant="secondary" as={Link} href="https://cal.com/team/garnet/intro?duration=30">
-          Book Demo
+          Book demo
         </Button>
         <Button as={Link} href="https://dashboard.garnet.ai">
           Start monitoring

@@ -28,10 +28,10 @@ export default function AboutPage() {
       <DivideX />
       <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-10 pb-10 md:px-8 md:pt-32 md:pb-20">
         <div className="grid grid-cols-1 gap-20 md:grid-cols-2">
-          <div className="flex flex-col items-start justify-start">
+          <div className="flex flex-col items-center justify-start text-center">
             <Badge text="Our Journey" />
-            <Heading className="mt-4 text-left">
-              We have felt the pain firsthand.
+            <Heading className="mt-4 text-center">
+              We have felt the pain firsthand!
             </Heading>
             <SubHeading className="mt-6 mr-auto text-left">
               We're a team of builders, hackers, and OSS maintainers with a mission to combine world-class infrastructure, developer experience, and security expertise to empower modern teams pushing the frontier.
@@ -121,9 +121,6 @@ export default function AboutPage() {
           </SubHeading>
           
           {/* Institutional Investors */}
-          <h2 className="mt-12 text-center font-mono text-sm tracking-tight text-neutral-500 uppercase dark:text-neutral-400">
-            Our Investors
-          </h2>
           
           {/* First row - Top 3 investors (larger) */}
           <div className="mt-8 grid w-full max-w-4xl grid-cols-3 items-center gap-8">
@@ -170,12 +167,9 @@ export default function AboutPage() {
           </div>
 
           {/* Individual Investors */}
-          <h2 className="mt-16 text-center font-mono text-sm tracking-tight text-neutral-500 uppercase dark:text-neutral-400">
-            Individual Investors
-          </h2>
-          <div className="mt-8 grid w-full max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-8 grid w-full max-w-7xl grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {individualInvestors.map((investor, index) => (
-              <div key={index} className="flex flex-col items-start space-y-2 p-4">
+              <div key={index} className="flex flex-col items-center space-y-2 p-4 text-center sm:items-start sm:text-left">
                 <Image
                   src={investor.image}
                   alt={investor.name}

@@ -64,24 +64,21 @@ export const PricingTable = () => {
                 {orderedTierNames.map((tierName) => (
                   <th
                     key={`hdr-${tierName}`}
-                    className="min-w-[220px] px-4 pt-12 pb-8 align-bottom"
+                    className="min-w-[220px] px-4 pt-12 pb-8 align-bottom text-center"
                   >
                     <div className="text-charcoal-700 text-lg font-medium dark:text-neutral-100">
                       {tierName}
                     </div>
-                    <div className="flex items-center text-sm font-normal text-gray-600 dark:text-neutral-300">
-                      $<SlidingNumber value={titleToPrice[tierName]?.[cycle]} />
-                      /seat billed{" "}
-                      {cycle === "monthly" ? "monthly" : "annually"}
+                    <div className="flex items-center justify-center text-sm font-normal text-gray-600 dark:text-neutral-300">
+                      {tierName === "Enterprise" ? (
+                        "Custom"
+                      ) : (
+                        <>
+                          $<SlidingNumber value={titleToPrice[tierName]?.[cycle]} />
+                          /node
+                        </>
+                      )}
                     </div>
-                    <Button
-                      as={Link}
-                      href="/sign-up"
-                      className="mt-4 w-full"
-                      variant="secondary"
-                    >
-                      Start for free
-                    </Button>
                   </th>
                 ))}
               </tr>

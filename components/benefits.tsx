@@ -28,7 +28,7 @@ export const Benefits = () => {
   const [activeBenefit, setActiveBenefit] = useState<number | null>(null);
   const benefits = [
     {
-      title: "Deploy in Minutes",
+      title: "Deploy in minutes",
       description:
         "One Helm install, instant runtime visibility. Protect build pipelines, staging, and production without extra config.",
       icon: <RocketIcon className="text-brand size-6" />,
@@ -48,7 +48,7 @@ export const Benefits = () => {
     {
       title: "Real-time protection",
       description:
-        "Block malicious activity instantly, from cryptominers to C2 traffic, before damage spreads.",
+        "Block malicious activity instantly, from C2 traffic to cryptominers, before damage spreads.",
       icon: <ShieldSplitIcon className="text-brand size-6" />,
     },
     {
@@ -60,7 +60,7 @@ export const Benefits = () => {
     {
       title: "Developer friendly",
       description:
-        "Built for platform and infra engineers. Easy to deploy, simple to manage, no tuning required.",
+        "Easy to deploy, simple to manage, no custom  tuning required.",
       icon: <ScreenCogIcon className="text-brand size-6" />,
     },
   ];
@@ -69,11 +69,11 @@ export const Benefits = () => {
       <div className="relative flex flex-col items-center">
         <Badge text="Benefits" />
         <SectionHeading className="mt-4">
-          Why platform teams choose Garnet
+          <span className="text-brand">Why platform teams</span> choose Garnet
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-2 max-w-lg">
-        Purpose-built for platform scale, Garnet gives teams runtime protection with low overhead, deep context, and seamless integrations.
+        Purpose-built for platform scale, Jibril provides runtime protection with low overhead, deep context, and seamless integrations.
         </SubHeading>
       </div>
       <div className="mt-20 grid grid-cols-1 gap-4 md:grid-cols-3">

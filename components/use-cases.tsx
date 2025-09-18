@@ -21,13 +21,13 @@ import { NativeIcon } from "@/icons/bento-icons";
 export const UseCases = () => {
   const useCases = [
     {
-      title: "Supply Chain Attacks",
+      title: "Supply chain attacks",
       description:
         "Stop malicious behaviors triggered by compromised dependencies or build artifacts running in your environment.",
       icon: <TruckIcon className="text-brand size-6" />,
     },
     {
-      title: "Privilege Escalation",
+      title: "Privilege escalation",
       description:
         "Detect and block attempts to gain elevated privileges, including sudoers tampering and container breakout exploits.",
       icon: <ShieldSplitIcon className="text-brand size-6" />,
@@ -39,19 +39,19 @@ export const UseCases = () => {
       icon: <WalletIcon className="text-brand size-6" />,
     },
     {
-      title: "Command & Control (C2) Traffic",
+      title: "Command & Control (C2) traffic",
       description:
         "Prevent DNS and IP communication with attacker-controlled servers before persistence is established.",
       icon: <NativeIcon className="text-brand size-6" />,
     },
     {
-      title: "Data Exfiltration",
+      title: "Data exfiltration",
       description:
         "Monitor and block unauthorized transfers of secrets, credentials, or sensitive data to external destinations.",
       icon: <DatabaseIcon className="text-brand size-6" />,
     },
     {
-      title: "Vulnerability Exploits",
+      title: "Vulnerability exploits",
       description:
         "Identify and stop runtime exploitation of known and zero-day vulnerabilities before they spread laterally.",
       icon: <BoltIcon className="text-brand size-6" />,
@@ -63,11 +63,11 @@ export const UseCases = () => {
       <div className="relative flex flex-col items-center py-20">
         <Badge text="Use Cases" />
         <SectionHeading className="mt-4">
-          Protection against modern runtime threats
+          Protection against modern <span className="text-brand">runtime threats</span>
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-2 max-w-lg">
-          Comprehensive runtime security against the sophisticated attacker. 
+          Comprehensive runtime security against the sophisticated attacker 
         </SubHeading>
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">

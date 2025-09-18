@@ -31,14 +31,14 @@ export const AgenticIntelligence = () => {
   return (
     <Container className="border-divide border-x">
       <div className="flex flex-col items-center py-16">
-        <Badge text="Features" />
+        {/* <Badge text="Features" /> */}
         <SectionHeading className="mt-4">
           Runtime detection & enforcement for{" "}
           <span className="text-brand">K8s workloads</span>
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-6 max-w-4xl px-2">
-        From CI/CD runners to production clusters, Garnet provides deep runtime visibility and protection. High-fidelity detections, intel-driven recipes, and in-kernel enforcement integrate seamlessly into your workflows.
+        From CI/CD runners to production clusters, Jibril provides deep runtime visibility and protection with high-fidelity detections, intel-driven rules, and in-kernel enforcement
         </SubHeading>
         <div className="border-divide divide-divide mt-16 grid grid-cols-1 divide-y border-y md:grid-cols-2 md:divide-x">
           <Card className="overflow-hidden mask-b-from-80%">
@@ -70,7 +70,7 @@ export const AgenticIntelligence = () => {
               <CardTitle>Kernel-level behavioral detection & response</CardTitle>
             </div>
             <CardDescription>
-              High-fidelity behavioral detections with deep context, mapped to MITRE ATT&CK incidents. Get alerted directly into tools and workflows of your choice through our rich API integrations. 
+            High-fidelity detections enriched with MITRE ATT&CK context. Stream alerts directly into your workflows through our rich API integrations. 
             </CardDescription>
             <NativeToolsIntegrationSkeleton />
           </Card>

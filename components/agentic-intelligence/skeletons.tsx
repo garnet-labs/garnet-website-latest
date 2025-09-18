@@ -310,7 +310,7 @@ export const TextToWorkflowBuilderSkeleton = () => {
 
   return (
     <motion.div className="relative mx-auto mt-2 h-full max-h-70 min-h-40 w-[85%] p-4">
-      <div className="absolute inset-x-0 -bottom-4 mx-auto flex w-[85%] items-center justify-between rounded-lg border border-gray-300 bg-white shadow-[0px_2px_12px_0px_rgba(0,0,0,0.08)] dark:border-neutral-700 dark:bg-neutral-800">
+      <div className="absolute inset-x-0 -bottom-4 mx-auto flex w-[75%] items-center justify-between rounded-lg border border-gray-300 bg-white shadow-[0px_2px_12px_0px_rgba(0,0,0,0.08)] dark:border-neutral-700 dark:bg-neutral-800">
         <div className="flex flex-1 items-center gap-4 px-4">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
@@ -322,7 +322,7 @@ export const TextToWorkflowBuilderSkeleton = () => {
             readOnly
             disabled
             className="flex-1 border-none py-4 text-xs font-mono placeholder-neutral-600 focus:outline-none dark:bg-neutral-800 cursor-default"
-            placeholder="Synced with 12 threat intelligence feeds"
+            placeholder="Synced with 12 threat feeds"
           />
         </div>
       </div>
@@ -479,7 +479,7 @@ const SystemMessage = ({
 export const NativeToolsIntegrationSkeleton = () => {
   return (
     <>
-      <div className="relative mx-auto my-12 flex h-full w-full items-center justify-center px-4 scale-[0.9] sm:scale-[1] md:scale-[1.1] lg:hidden">
+      <div className="relative mx-auto my-12 flex h-full w-full items-center justify-center px-4 scale-[1.1] sm:scale-[1.2] md:scale-[1.3] lg:hidden">
         <Image
           src="/illustrations/architecture_white.png"
           alt="Native Tools Integration"

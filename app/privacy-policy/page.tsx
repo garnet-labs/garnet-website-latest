@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
               </p>
               
               <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mb-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-4 md:gap-6">
                   <div>
                     <h4 className="font-medium mb-2">Attention</h4>
                     <p className="text-gray-600 dark:text-gray-300">Garnet Labs Inc.</p>
@@ -90,7 +90,7 @@ export default function PrivacyPolicy() {
               </p>
               
               <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-4 md:gap-6">
                   <div>
                     <h4 className="font-medium mb-2">Address</h4>
                     <p className="text-gray-600 dark:text-gray-300">

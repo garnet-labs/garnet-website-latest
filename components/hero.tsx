@@ -13,14 +13,14 @@ import Link from "next/link";
 export const Hero = () => {
   return (
     <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
-      <Badge text="For modern platform teams." />
+      <Badge text="For modern platform teams" />
       <Heading className="mt-4">
-      Runtime visibility & protection for <br />
+      Runtime threat  protection for <br />
         <span className="text-brand">Kubernetes workloads</span>
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      Low-overhead eBPF agent with in-kernel behavioral detections and real-time response, built for platform teams running at scale.
+      Lightweight eBPF agent with in-kernel behavioral detections and real-time response, purpose-built for platform teams at scale
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">

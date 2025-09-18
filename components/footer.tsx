@@ -65,17 +65,17 @@ export const Footer = () => {
   ];
   return (
     <Container>
-      <div className="grid grid-cols-1 px-4 py-20 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
-        <div className="mb-6 sm:col-span-2 md:col-span-4 lg:col-span-3">
+      <div className="grid grid-cols-2 gap-6 px-4 py-20 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+        <div className="col-span-2 mb-6 flex flex-col items-center text-center sm:col-span-2 sm:items-start sm:text-left md:col-span-4 lg:col-span-3">
           <Logo />
-          <SubHeading as="p" className="mt-4 max-w-lg text-left">
-            Runtime security for modern platform teams.
+          <SubHeading as="p" className="mt-4 max-w-lg">
+            Runtime security for modern platform teams
           </SubHeading>
           {/* <Link href="https://dashboard.garnet.ai">
             <Button className="mt-4 mb-8 lg:mb-0">Start Monitoring</Button>
           </Link> */}
         </div>
-        <div className="col-span-1 mb-4 flex flex-col gap-2 md:col-span-1 md:mb-0">
+        <div className="col-span-1 mb-4 flex flex-col items-center gap-2 text-center sm:items-start sm:text-left md:col-span-1 md:mb-0">
           <p className="text-sm font-medium text-gray-600">Product</p>
           {product.map((item) => (
             <Link
@@ -87,7 +87,7 @@ export const Footer = () => {
             </Link>
           ))}
         </div>
-        <div className="col-span-1 mb-4 flex flex-col gap-2 md:col-span-1 md:mb-0">
+        <div className="col-span-1 mb-4 flex flex-col items-center gap-2 text-center sm:items-start sm:text-left md:col-span-1 md:mb-0">
           <p className="text-sm font-medium text-gray-600">Company</p>
           {company.map((item) => (
             <Link
@@ -99,7 +99,7 @@ export const Footer = () => {
             </Link>
           ))}
         </div>
-        <div className="col-span-1 mb-4 flex flex-col gap-2 md:col-span-1 md:mb-0">
+        <div className="col-span-1 mb-4 flex flex-col items-center gap-2 text-center sm:items-start sm:text-left md:col-span-1 md:mb-0">
           <p className="text-sm font-medium text-gray-600">Security</p>
           {security.map((item) => (
             <Link
@@ -111,7 +111,7 @@ export const Footer = () => {
             </Link>
           ))}
           {/* SOC 2 Badge */}
-          <div className="mt-1 flex justify-start">
+          <div className="mt-1 flex justify-center sm:justify-start">
             <Link
               href="https://app.vanta.com/garnet.ai/trust/i63921ahbwt5v5ytju14n0"
               target="_blank"
@@ -122,7 +122,7 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="col-span-1 mb-4 flex flex-col gap-2 md:col-span-1 md:mb-0">
+        <div className="col-span-1 mb-4 flex flex-col items-center gap-2 text-center sm:items-start sm:text-left md:col-span-1 md:mb-0">
           <p className="text-sm font-medium text-gray-600">Legal</p>
           {legal.map((item) => (
             <Link
