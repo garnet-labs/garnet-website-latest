@@ -17,14 +17,31 @@ export function getSEOTags({
   const seoTitle = title || config.websiteName;
   const seoDescription = description || config.websiteDescription;
   const canonicalUrl = `${config.websiteUrl}${canonicalUrlRelative || ""}`;
+  const defaultKeywords = [
+    "kubernetes security",
+    "runtime security",
+    "ebpf",
+    "container security",
+    "behavioral detection",
+    "kubernetes threat detection",
+    "supply chain attacks",
+    "cloud native security",
+  ];
 
   const metadata: Metadata = {
     title: seoTitle,
     description: seoDescription,
-    keywords,
+    keywords: keywords.length ? keywords : defaultKeywords,
     metadataBase: new URL(config.websiteUrl),
     alternates: {
       canonical: canonicalUrlRelative,
+    },
+    icons: {
+      icon: [
+        { url: "/dolphin.png", sizes: "any", type: "image/png" },
+      ],
+      shortcut: ["/dolphin.png"],
+      apple: "/dolphin.png",
     },
     openGraph: {
       title: seoTitle,

@@ -10,9 +10,9 @@ import { CTA } from "@/components/cta";
 import { DivideX } from "@/components/divide";
 
 export const metadata: Metadata = {
-  title: "All blogs | Minimal Portfolio Website Template - Aceternity UI Pro",
+  title: "All Blogs | Garnet",
   description:
-    "A perfect portfolio website template that showcases your skills, minimal and smooth microinteractions, perfect for developers and designers.",
+    "Insights on Kubernetes runtime security, eBPF, behavioral detection, and protecting modern platform teams.",
 };
 const truncate = (str: string, length: number) => {
   return str.length > length ? str.substring(0, length) + "..." : str;
@@ -28,8 +28,7 @@ export default async function BlogsPage() {
         <Badge text=" All blogs" />
         <Heading>Writing for the World</Heading>
         <SubHeading className="mx-auto mt-2 max-w-sm px-4">
-          At Notus, we educate and empower developers to build better software
-          solutions for the world.
+          We share what we learn about runtime security for Kubernetes—deep dives on eBPF, detections, and real-world incident response.
         </SubHeading>
         <div className="border-divide divide-divide mt-10 flex w-full flex-col divide-y border-y">
           <GridLayout blogs={allBlogs.slice(0, 3)} />

@@ -4,9 +4,9 @@ import { SignIn } from "@/components/sign-in";
 import { getSEOTags } from "@/lib/seo";
 
 export const metadata = getSEOTags({
-  title: "Sign In | Nodus",
+  title: "Sign In | Garnet",
   description:
-    "Sign in to Nodus and start building your own autonomous agents today.",
+    "Access your Garnet dashboard to monitor Kubernetes runtime threats and respond in real time.",
 });
 
 export default function SignupPage() {
