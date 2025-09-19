@@ -7,6 +7,8 @@ import { PostHogProvider } from "@/components/providers/posthog-provider";
 import { getSEOTags } from "@/lib/seo";
 import { inter } from "@/fonts/inter-display/inter";
 import { dmMono } from "@/fonts/dm-mono";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = getSEOTags();
 
@@ -25,6 +27,8 @@ export default function RootLayout({
               {children}
               <Footer />
             </main>
+            <Analytics />
+            <SpeedInsights />
           </PostHogProvider>
         </ThemeProvider>
       </body>
