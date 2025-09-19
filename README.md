@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Garnet Website
 
-## Getting Started
+A Next.js 15 App Router project with React 19, Tailwind CSS v4, MDX-powered blog, Vercel Analytics, and Vercel Speed Insights.
 
-First, run the development server:
+### Tech Stack
+- Next.js App Router (15)
+- React 19
+- Tailwind CSS v4
+- MDX for blog content (`data/*.mdx`)
+- Vercel Analytics and Speed Insights
+- next-themes for dark/light mode
 
+### Local Development
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The dev server runs on http://localhost:3000. This repo uses pnpm; please prefer it for installs and scripts.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If pnpm warns about ignored build scripts, run:
+```bash
+pnpm approve-builds
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Theming
+Theme is managed by `next-themes` via `ThemeProvider` in `app/layout.tsx`.
+- Current default: system theme
+- To default to dark while still allowing light: set `defaultTheme="dark"` and keep `enableSystem` in the `ThemeProvider` props.
 
-## Learn More
+### Analytics & Speed Insights (Vercel)
+Integrated per Vercel docs. Components are rendered in `app/layout.tsx`:
+- `@vercel/analytics` → `<Analytics />`
+- `@vercel/speed-insights` → `<SpeedInsights />`
 
-To learn more about Next.js, take a look at the following resources:
+Notes:
+- No API keys are required; data appears automatically on Vercel after deploy.
+- See Vercel docs: `https://vercel.com/docs/analytics` and `https://vercel.com/docs/speed-insights`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### PostHog (Optional)
+`components/providers/posthog-provider.tsx` includes a placeholder and commented full implementation.
+To enable:
+1) `pnpm add posthog-js`
+2) Set `NEXT_PUBLIC_POSTHOG_KEY` and `NEXT_PUBLIC_POSTHOG_HOST` in `.env`
+3) Uncomment the full implementation block in the provider
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Blog Content
+MDX articles live in `data/*.mdx`. The blog routes render from these files.
 
-## Deploy on Vercel
+### Branching & PRs
+- Active development branch: `dev`
+- Release branch: `main`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create a PR from `dev` → `main` (GitHub CLI):
+```bash
+gh pr create --base main --head dev --title "Release" --body "Merge dev into main"
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Environment & Secrets
+- Never commit secrets. Use `.env` for local only.
+- The app reads public envs via `process.env.NEXT_PUBLIC_*` only when required. Avoid server-only secrets in client code.
+
+### Deployment
+Deploy via Vercel. After merging to `main`, Vercel will build and surface Analytics and Speed Insights automatically.
