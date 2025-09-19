@@ -1,11 +1,11 @@
 const config = {
   websiteName:
-    "Garnet: Runtime Security for Modern Engineering Teams",
+    "Garnet — Runtime Threat Protection for Kubernetes",
   websiteUrl:
     process.env.NEXT_PUBLIC_WEBSITE_URL ||
     "https://garnet.sh/",
   websiteDescription:
-    "Behavioral detection & blocking for your pipelines and clusters. Protect against supply chain attacks, cryptominers, and container escapes with eBPF-based runtime security that actually works.",
+    "Lightweight eBPF agent providing in-kernel behavioral detections and real-time response for Kubernetes workloads. Block supply chain attacks, cryptominers, container escapes, and more with runtime security that actually works.",
 };
 
 export default config;

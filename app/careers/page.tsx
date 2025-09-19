@@ -22,9 +22,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = getSEOTags({
-  title: "Careers - Aceternity",
+  title: "Careers | Garnet",
   description:
-    "We're Building the Future of Agent-Driven Development. Founded by engineers and AI researchers, Notus was born out of a simple frustration: building intelligent systems still required too much manual orchestration. We set out to change that by creating a tool that lets teams design, simulate, and launch autonomous agents visually and intuitively.",
+    "Join Garnet to build runtime security for modern platform teams. Move fast, own outcomes, and protect Kubernetes at scale.",
 });
 
 export default function CareersPage() {
