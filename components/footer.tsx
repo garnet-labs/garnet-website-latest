@@ -9,12 +9,16 @@ import { SOC2Badge } from "@/icons/general";
 export const Footer = () => {
   const product = [
     {
+      title: "Docs",
+      href: "https://docs.garnet.ai",
+    },
+    {
       title: "Jibril",
       href: "https://jibril.garnet.ai/",
     },
     {
-      title: "Docs",
-      href: "https://docs.garnet.ai",
+      title: "MITRE",
+      href: "https://mitre.garnet.ai",
     },
     // {
     //   title: "GitHub Actions",

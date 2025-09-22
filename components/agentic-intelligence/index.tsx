@@ -33,12 +33,13 @@ export const AgenticIntelligence = () => {
       <div className="flex flex-col items-center py-16">
         {/* <Badge text="Features" /> */}
         <SectionHeading className="mt-4">
-          Runtime detection & enforcement for{" "}
-          <span className="text-brand">K8s workloads</span>
+          Runtime threat detection & <br className="sm:hidden" />
+           enforcement <br className="hidden sm:block" />
+          for <span className="text-brand">modern workloads</span>
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-6 max-w-4xl px-2">
-        From CI/CD runners to production clusters, Jibril provides deep runtime visibility and protection with high-fidelity detections, intel-driven rules, and in-kernel enforcement
+        From CI/CD runners to production clusters, Jibril surfaces suspicious behaviors across network, file, and execution layers, mapping them to MITRE tactics with high-fidelity detections and in-kernel enforcement.
         </SubHeading>
         <div className="border-divide divide-divide mt-16 grid grid-cols-1 divide-y border-y md:grid-cols-2 md:divide-x">
           <Card className="overflow-hidden mask-b-from-80%">
