@@ -67,7 +67,7 @@ export const UseCases = () => {
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-2 max-w-lg">
-          Comprehensive runtime security against the sophisticated attacker 
+          Comprehensive runtime security against the sophisticated attacker. 
         </SubHeading>
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">

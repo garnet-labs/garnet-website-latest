@@ -36,7 +36,7 @@ export const Benefits = () => {
     {
       title: "Zero false positives",
       description:
-        "Deep behavioral context cuts through the noise, surfacing only the incidents that matter",
+        "Deep behavioral context cuts through the noise, surfacing only the incidents that matter.",
       icon: <ShieldIcon className="text-brand size-6" />,
     },
     {
