@@ -15,12 +15,12 @@ export const Hero = () => {
     <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
       <Badge text="For modern platform teams" />
       <Heading className="mt-4">
-        Runtime threat protection for{" "}
-        <span className="text-brand">Kubernetes workloads</span>
+        Runtime intrusion detection <br className="hidden sm:block" />
+        for <span className="text-brand">Kubernetes workloads</span>
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      Lightweight eBPF agent with in-kernel behavioral detections and real-time response, purpose-built for platform teams at scale
+        Lightweight eBPF agent that surfaces MITRE-mapped behaviors and suspicious runtime activity, giving platform teams real-time visibility and control.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
