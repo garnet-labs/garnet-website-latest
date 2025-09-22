@@ -68,7 +68,7 @@ export const HowItWorks = () => {
         <SectionHeading className="mt-4">From install to protection in minutes</SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-6 max-w-2xl text-center px-4">
-        Deploy Jibril, our lightweight runtime agent, with a single Helm command. Get instant runtime threat detection, blocking, and high-fidelity alerts in your existing workflows
+        Deploy Jibril, our lightweight runtime agent, with a single Helm command. Get instant runtime threat detection, blocking, and high-fidelity alerts in your existing workflows.
         </SubHeading>
         {/* Desktop Tabs */}
         <div className="border-divide divide-divide mt-16 hidden w-full grid-cols-2 divide-x border-t lg:grid">
