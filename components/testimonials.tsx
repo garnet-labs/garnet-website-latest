@@ -56,9 +56,9 @@ export const Testimonials = () => {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="divide-divide grid grid-cols-1 items-stretch divide-x bg-gray-100 md:h-[28rem] md:grid-cols-4 dark:bg-neutral-800"
+            className="divide-divide grid grid-cols-1 items-stretch bg-gray-100 md:h-[28rem] dark:bg-neutral-800"
           >
-            <div className="col-span-4 flex flex-col gap-10 px-4 py-10 md:flex-row md:py-0 lg:col-span-3">
+            <div className="col-span-1 flex flex-col gap-10 px-4 py-10 md:flex-row md:py-0">
               <Image
                 src={selectedTestimonial.avatar}
                 alt={selectedTestimonial.name}
@@ -102,18 +102,6 @@ export const Testimonials = () => {
                       {selectedTestimonial.company}
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="hidden flex-col justify-end px-4 pb-4 lg:col-span-1 lg:flex">
-              <div className="flex flex-col gap-4">
-                <div className="flex flex-col gap-2">
-                  <p className="text-charcoal-700 text-7xl font-semibold dark:text-neutral-100">
-                    {selectedTestimonial.sideText}
-                  </p>
-                  <p className="text-sm text-gray-700 dark:text-neutral-400">
-                    {selectedTestimonial.sideSubText}
-                  </p>
                 </div>
               </div>
             </div>
