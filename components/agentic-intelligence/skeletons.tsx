@@ -479,7 +479,7 @@ const SystemMessage = ({
 export const NativeToolsIntegrationSkeleton = () => {
   return (
     <>
-      <div className="relative mx-auto my-12 flex h-full w-full items-center justify-center px-4 scale-[1.1] sm:scale-[1.2] md:scale-[1.3] lg:hidden">
+      <div className="relative mx-auto my-12 flex h-full w-full items-center justify-center px-4 scale-[1.1] sm:scale-[1.2] md:scale-[1.15] lg:hidden">
         <Image
           src="/illustrations/architecture_white.png"
           alt="Native Tools Integration"

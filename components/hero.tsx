@@ -15,7 +15,7 @@ export const Hero = () => {
     <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
       <Badge text="For modern platform teams" />
       <Heading className="mt-4">
-      Runtime threat  protection for <br />
+        Runtime threat protection for{" "}
         <span className="text-brand">Kubernetes workloads</span>
       </Heading>
 
