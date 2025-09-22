@@ -99,7 +99,7 @@ export const Pricing = () => {
 
               <div
                 key={tier.title + "tier-list-of-items"}
-                className="flex flex-col items-center gap-4 px-0 py-4 mt-6 ml-32 md:ml-0 md:mt-0 md:hidden md:p-8"
+                className="flex flex-col items-center gap-4 px-0 py-4 mt-6 ml-24 md:ml-0 md:mt-0 md:hidden md:p-8"
               >
                 {tier.features.map((tierFeature, idx) => (
                   <Step key={tierFeature + tierIdx + idx}>{tierFeature}</Step>
