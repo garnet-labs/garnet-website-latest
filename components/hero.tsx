@@ -20,7 +20,7 @@ export const Hero = () => {
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-        Lightweight eBPF agent that surfaces MITRE-mapped behaviors and suspicious runtime activity, giving platform teams real-time visibility and control.
+      Lightweight security agent that detects suspicious runtime behaviors, maps them to MITRE tactics, and delivers high-fidelity insights you can act on.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
