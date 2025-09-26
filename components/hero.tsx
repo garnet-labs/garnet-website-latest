@@ -15,12 +15,12 @@ export const Hero = () => {
     <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
       <Badge text="For modern platform teams" />
       <Heading className="mt-4">
-        Runtime intrusion detection <br className="hidden sm:block" />
-        for <span className="text-brand">Kubernetes workloads</span>
+        Runtime protection <br className="hidden sm:block" />
+        for <span className="text-brand">agentic workloads</span>
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      Lightweight security agent that detects suspicious runtime behaviors, maps them to MITRE tactics, and delivers high-fidelity insights you can act on.
+      Block cryptominers and malicious network traffic from third-party code by monitoring ephemeral workloads and containers at runtime.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
