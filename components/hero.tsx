@@ -20,7 +20,7 @@ export const Hero = () => {
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      Protect against compromised dependencies by monitoring ephemeral container and workload behaviors, to block threats like cryptomining and malicious network activity in real-time.
+      Protect against compromised dependencies by monitoring ephemeral workloads and containers to detect anomalous behaviors and block threats like cryptomining and malicious network activity.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
