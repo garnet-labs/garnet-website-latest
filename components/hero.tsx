@@ -20,7 +20,7 @@ export const Hero = () => {
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      Block cryptominers and malicious network traffic from third-party code by monitoring ephemeral workloads and containers at runtime.
+      Protect against compromised dependencies by monitoring ephemeral container and workload behaviors, to block threats like cryptomining and malicious network activity in real-time.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
