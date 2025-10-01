@@ -20,7 +20,7 @@ export const Hero = () => {
       </Heading>
 
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      Protect against supply chain attacks by monitoring ephemeral workloads and containers to detect anomalous behaviors and block threats like cryptomining and malicious network activity.
+      Protect against supply chain attacks by monitoring ephemeral workloads and containers to detect suspicious network behaviors and block malicious outbound connections used for payload delivery or data theft.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
