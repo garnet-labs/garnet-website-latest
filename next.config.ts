@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   // Optimize build output for production
   reactStrictMode: true,
   
-  // Performance optimizations
-  swcMinify: true,
-  
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
@@ -15,7 +12,6 @@ const nextConfig: NextConfig = {
   // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['motion', 'react-use-measure'],
-    optimizeCss: true,
   },
   
   images: {
