@@ -5,38 +5,31 @@ import { getSEOTags } from "@/lib/seo";
 
 // Lazy load all below-the-fold components for instant FCP
 const HowItWorks = dynamicImport(() => import("@/components/how-it-works").then(mod => ({ default: mod.HowItWorks })), {
-  loading: () => <div className="min-h-[400px]" />,
-  ssr: true
+  loading: () => <div className="min-h-[400px] bg-white dark:bg-black" />
 });
 
 const AgenticIntelligence = dynamicImport(() => import("@/components/agentic-intelligence").then(mod => ({ default: mod.AgenticIntelligence })), {
-  loading: () => <div className="min-h-[400px]" />,
-  ssr: true
+  loading: () => <div className="min-h-[400px] bg-white dark:bg-black" />
 });
 
 const UseCases = dynamicImport(() => import("@/components/use-cases").then(mod => ({ default: mod.UseCases })), {
-  loading: () => <div className="min-h-[400px]" />,
-  ssr: true
+  loading: () => <div className="min-h-[400px] bg-white dark:bg-black" />
 });
 
 const Benefits = dynamicImport(() => import("@/components/benefits").then(mod => ({ default: mod.Benefits })), {
-  loading: () => <div className="min-h-[400px]" />,
-  ssr: true
+  loading: () => <div className="min-h-[400px] bg-white dark:bg-black" />
 });
 
 const Testimonials = dynamicImport(() => import("@/components/testimonials").then(mod => ({ default: mod.Testimonials })), {
-  loading: () => <div className="min-h-[300px]" />,
-  ssr: true
+  loading: () => <div className="min-h-[300px] bg-white dark:bg-black" />
 });
 
 const Security = dynamicImport(() => import("@/components/security").then(mod => ({ default: mod.Security })), {
-  loading: () => null,
-  ssr: true
+  loading: () => null
 });
 
 const CTA = dynamicImport(() => import("@/components/cta").then(mod => ({ default: mod.CTA })), {
-  loading: () => <div className="min-h-[300px]" />,
-  ssr: true
+  loading: () => <div className="min-h-[300px] bg-white dark:bg-black" />
 });
 
 export const metadata = getSEOTags();
@@ -47,9 +40,11 @@ export const revalidate = 3600; // Revalidate every hour
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
       <DivideX />
-      <Hero />
+      <div className="relative z-10">
+        <Hero />
+      </div>
       <DivideX />
       <HowItWorks />
       <DivideX />

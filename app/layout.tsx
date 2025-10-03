@@ -24,9 +24,21 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cal.com" />
         <link rel="dns-prefetch" href="https://dashboard.garnet.ai" />
         <link rel="dns-prefetch" href="https://cal.com" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('garnet-theme') || 'light';
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
       <body className="font-primary h-full bg-white [--pattern-fg:var(--color-charcoal-900)]/10 dark:bg-black dark:[--pattern-fg:var(--color-neutral-100)]/30">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={false} storageKey="garnet-theme">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="garnet-theme">
           <PostHogProvider>
             <main className="h-full bg-white antialiased dark:bg-black">
               <Navbar />
