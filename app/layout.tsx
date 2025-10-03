@@ -45,10 +45,10 @@ export default function RootLayout({
               {children}
               <Footer />
             </main>
-            <Analytics />
-            <SpeedInsights />
           </PostHogProvider>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,16 +1,10 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { Logo } from "./logo";
 import { Container } from "./container";
 import Link from "next/link";
 import { Button } from "./button";
-import { CloseIcon, HamburgerIcon } from "@/icons/general";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-} from "motion/react";
 import { ModeToggle } from "./mode-toggle";
+import { FloatingNav, MobileNav } from "./navbar-client";
 
 const items = [
   {
@@ -38,84 +32,6 @@ export const Navbar = () => {
       <DesktopNav items={items} />
       <MobileNav items={items} />
     </Container>
-  );
-};
-
-const MobileNav = ({ items }: { items: { title: string; href: string }[] }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  
-  return (
-    <div className="relative flex items-center justify-between p-2 md:hidden">
-      <Logo />
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="shadow-aceternity flex size-6 flex-col items-center justify-center rounded-md"
-        aria-label="Toggle menu"
-      >
-        <HamburgerIcon className="size-4 shrink-0 text-gray-600" />
-      </button>
-
-      <AnimatePresence mode="wait">
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
-            className="fixed inset-0 z-[60] h-full w-full bg-white shadow-lg dark:bg-neutral-900"
-          >
-            <div className="absolute right-4 bottom-4">
-              <ModeToggle />
-            </div>
-
-            <div className="flex items-center justify-between p-2">
-              <Logo />
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="shadow-aceternity flex size-6 flex-col items-center justify-center rounded-md"
-                aria-label="Toggle menu"
-              >
-                <CloseIcon className="size-4 shrink-0 text-gray-600" />
-              </button>
-            </div>
-            <div className="divide-divide border-divide mt-6 flex flex-col divide-y border-t">
-              {items.map((item, index) => (
-                <Link
-                  href={item.href}
-                  key={item.title}
-                  className="px-4 py-2 font-medium text-gray-600 transition duration-200 hover:text-neutral-900 dark:text-gray-300 dark:hover:text-neutral-300"
-                  onClick={() => setIsOpen(false)}
-                  style={{
-                    animation: `fadeInUp 0.2s ease-out ${index * 0.05}s both`
-                  }}
-                >
-                  {item.title}
-                </Link>
-              ))}
-              <div className="mt-4 flex flex-col gap-3 p-4">
-                <Button
-                  onClick={() => setIsOpen(false)}
-                  as={Link}
-                  href="https://cal.com/team/garnet/intro?duration=30"
-                  className="w-full"
-                  variant="secondary"
-                >
-                  Book demo
-                </Button>
-                <Button
-                  onClick={() => setIsOpen(false)}
-                  as={Link}
-                  href="https://dashboard.garnet.ai"
-                  className="w-full"
-                >
-                  Start monitoring
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
   );
 };
 
@@ -148,56 +64,5 @@ const DesktopNav = ({
         </Button>
       </div>
     </div>
-  );
-};
-
-const FloatingNav = ({
-  items,
-}: {
-  items: { title: string; href: string }[];
-}) => {
-  const { scrollY } = useScroll();
-  const [isVisible, setIsVisible] = React.useState(false);
-  const [isMounted, setIsMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setIsMounted(true);
-    const unsubscribe = scrollY.on('change', (latest) => {
-      setIsVisible(latest > 100);
-    });
-    return () => unsubscribe();
-  }, [scrollY]);
-
-  if (!isMounted) return null;
-
-  return (
-    <motion.div
-      initial={{ y: -100 }}
-      animate={{ y: isVisible ? 10 : -100 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className="shadow-aceternity fixed inset-x-0 top-0 z-50 mx-auto hidden max-w-[calc(80rem-4rem)] items-center justify-between bg-white/80 px-2 py-2 backdrop-blur-sm md:flex xl:rounded-2xl dark:bg-neutral-900/80 dark:shadow-[0px_2px_0px_0px_var(--color-neutral-800),0px_-2px_0px_0px_var(--color-neutral-800)]"
-    >
-      <Logo />
-      <div className="flex items-center gap-10">
-        {items.map((item) => (
-          <Link
-            className="font-medium text-gray-600 transition duration-200 hover:text-neutral-900 dark:text-gray-300 dark:hover:text-neutral-300"
-            href={item.href}
-            key={item.title}
-          >
-            {item.title}
-          </Link>
-        ))}
-      </div>
-      <div className="flex items-center gap-2">
-        <ModeToggle />
-        <Button variant="secondary" as={Link} href="https://cal.com/team/garnet/intro?duration=30">
-          Book demo
-        </Button>
-        <Button as={Link} href="https://dashboard.garnet.ai">
-          Start monitoring
-        </Button>
-      </div>
-    </motion.div>
   );
 };
