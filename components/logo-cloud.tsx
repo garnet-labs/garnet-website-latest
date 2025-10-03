@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Container } from "./container";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
@@ -13,6 +14,10 @@ export const LogoCloud = () => {
   );
 
   useEffect(() => {
+    // Only animate if user prefers motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const interval = setInterval(() => {
       const notDisplayedIndices = logos
         .map((_, index) => index)
@@ -35,7 +40,7 @@ export const LogoCloud = () => {
           return newIndices;
         });
       }
-    }, 3000);
+    }, 5000); // Increased from 3s to 5s for better performance
 
     return () => clearInterval(interval);
   }, [displayedIndices, logos]);
@@ -90,9 +95,13 @@ export const LogoCloud = () => {
                     opacity: 1,
                   }}
                 >
-                  <motion.img
+                  <Image
                     src={logo.src}
                     alt={logo.title}
+                    width={120}
+                    height={48}
+                    loading="lazy"
+                    quality={85}
                     className={cn(
                       "h-8 w-auto object-contain transition-all duration-500 dark:invert dark:filter",
                       logo.className,

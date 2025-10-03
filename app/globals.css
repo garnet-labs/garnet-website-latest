@@ -4,8 +4,55 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  /* Critical styles for instant render */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
   button {
     @apply cursor-pointer;
+  }
+  
+  /* Performance optimizations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Prevent layout shift during font load */
+  body {
+    font-optical-sizing: auto;
+  }
+  
+  /* Reduce motion for accessibility and performance */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* Hardware acceleration for animations - only when needed */
+  [class*="animate-"],
+  [class*="motion-"] {
+    will-change: auto;
+  }
+  
+  /* Optimize motion animations */
+  [class*="motion-"]:hover {
+    will-change: transform;
   }
 }
 @theme {
@@ -51,6 +98,17 @@
     }
     100% {
       transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

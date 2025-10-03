@@ -48,9 +48,20 @@ export const PixelatedCanvas: React.FC<PixelatedCanvasProps> = ({
     };
 
     updateDimensions();
-    window.addEventListener("resize", updateDimensions);
+    
+    // Use debounced resize handler for better performance
+    let resizeTimeout: NodeJS.Timeout;
+    const debouncedResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(updateDimensions, 150);
+    };
+    
+    window.addEventListener("resize", debouncedResize);
 
-    return () => window.removeEventListener("resize", updateDimensions);
+    return () => {
+      window.removeEventListener("resize", debouncedResize);
+      clearTimeout(resizeTimeout);
+    };
   }, []);
 
   useEffect(() => {

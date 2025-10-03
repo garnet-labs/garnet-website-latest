@@ -9,8 +9,6 @@ import {
   AnimatePresence,
   motion,
   useScroll,
-  useSpring,
-  useTransform,
 } from "motion/react";
 import { ModeToggle } from "./mode-toggle";
 
@@ -45,6 +43,7 @@ export const Navbar = () => {
 
 const MobileNav = ({ items }: { items: { title: string; href: string }[] }) => {
   const [isOpen, setIsOpen] = useState(false);
+  
   return (
     <div className="relative flex items-center justify-between p-2 md:hidden">
       <Logo />
@@ -56,13 +55,13 @@ const MobileNav = ({ items }: { items: { title: string; href: string }[] }) => {
         <HamburgerIcon className="size-4 shrink-0 text-gray-600" />
       </button>
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
             className="fixed inset-0 z-[60] h-full w-full bg-white shadow-lg dark:bg-neutral-900"
           >
             <div className="absolute right-4 bottom-4">
@@ -86,16 +85,11 @@ const MobileNav = ({ items }: { items: { title: string; href: string }[] }) => {
                   key={item.title}
                   className="px-4 py-2 font-medium text-gray-600 transition duration-200 hover:text-neutral-900 dark:text-gray-300 dark:hover:text-neutral-300"
                   onClick={() => setIsOpen(false)}
+                  style={{
+                    animation: `fadeInUp 0.2s ease-out ${index * 0.05}s both`
+                  }}
                 >
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2, delay: index * 0.1 }}
-                  >
-                    {item.title}
-                  </motion.div>
+                  {item.title}
                 </Link>
               ))}
               <div className="mt-4 flex flex-col gap-3 p-4">
@@ -163,17 +157,24 @@ const FloatingNav = ({
   items: { title: string; href: string }[];
 }) => {
   const { scrollY } = useScroll();
-  const springConfig = {
-    stiffness: 300,
-    damping: 30,
-  };
-  const y = useSpring(
-    useTransform(scrollY, [100, 120], [-100, 10]),
-    springConfig,
-  );
+  const [isVisible, setIsVisible] = React.useState(false);
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+    const unsubscribe = scrollY.on('change', (latest) => {
+      setIsVisible(latest > 100);
+    });
+    return () => unsubscribe();
+  }, [scrollY]);
+
+  if (!isMounted) return null;
+
   return (
     <motion.div
-      style={{ y }}
+      initial={{ y: -100 }}
+      animate={{ y: isVisible ? 10 : -100 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="shadow-aceternity fixed inset-x-0 top-0 z-50 mx-auto hidden max-w-[calc(80rem-4rem)] items-center justify-between bg-white/80 px-2 py-2 backdrop-blur-sm md:flex xl:rounded-2xl dark:bg-neutral-900/80 dark:shadow-[0px_2px_0px_0px_var(--color-neutral-800),0px_-2px_0px_0px_var(--color-neutral-800)]"
     >
       <Logo />

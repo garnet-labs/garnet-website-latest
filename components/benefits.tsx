@@ -137,6 +137,10 @@ const MiddleCard = () => {
   ];
   const [activeText, setActiveText] = useState(0);
   useEffect(() => {
+    // Don't animate if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const interval = setInterval(() => {
       setActiveText((prev) => (prev + 1) % texts.length);
     }, 4000);
