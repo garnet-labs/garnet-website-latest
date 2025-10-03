@@ -7,6 +7,31 @@
   button {
     @apply cursor-pointer;
   }
+  
+  /* Performance optimizations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Reduce motion for accessibility and performance */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Hardware acceleration for animations */
+  [class*="animate-"],
+  [class*="motion-"] {
+    will-change: transform;
+    transform: translateZ(0);
+  }
 }
 @theme {
   --font-primary: var(--font-inter), Inter Display, sans-serif;

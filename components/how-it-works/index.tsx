@@ -53,6 +53,10 @@ export const HowItWorks = () => {
   const DURATION = 8000;
 
   useEffect(() => {
+    // Don't auto-rotate if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const interval = setInterval(() => {
       const currentIndex = tabs.findIndex((tab) => tab.id === activeTab.id);
       const nextIndex = (currentIndex + 1) % tabs.length;
