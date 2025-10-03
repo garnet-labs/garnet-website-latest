@@ -1,15 +1,41 @@
-import { AgenticIntelligence } from "@/components/agentic-intelligence";
-import { Benefits } from "@/components/benefits";
-import { CTA, CTAOrbit } from "@/components/cta";
+import nextDynamic from "next/dynamic";
 import { DivideX } from "@/components/divide";
 import { Hero } from "@/components/hero";
-import { HowItWorks } from "@/components/how-it-works";
-import { LogoCloud } from "@/components/logo-cloud";
-import { Security } from "@/components/security";
-import { Testimonials } from "@/components/testimonials";
-import { UseCases } from "@/components/use-cases";
-
 import { getSEOTags } from "@/lib/seo";
+
+export const runtime = "edge";
+export const dynamic = "force-static";
+export const revalidate = 86400;
+
+const HowItWorks = nextDynamic(
+  () => import("@/components/how-it-works").then((m) => m.HowItWorks),
+  { ssr: false, loading: () => null },
+);
+const AgenticIntelligence = nextDynamic(
+  () =>
+    import("@/components/agentic-intelligence").then((m) => m.AgenticIntelligence),
+  { ssr: false, loading: () => null },
+);
+const LogoCloud = nextDynamic(
+  () => import("@/components/logo-cloud").then((m) => m.LogoCloud),
+  { ssr: false, loading: () => null },
+);
+const Benefits = nextDynamic(
+  () => import("@/components/benefits").then((m) => m.Benefits),
+  { ssr: false, loading: () => null },
+);
+const Testimonials = nextDynamic(
+  () => import("@/components/testimonials").then((m) => m.Testimonials),
+  { ssr: false, loading: () => null },
+);
+const UseCases = nextDynamic(
+  () => import("@/components/use-cases").then((m) => m.UseCases),
+  { ssr: false, loading: () => null },
+);
+const CTA = nextDynamic(
+  () => import("@/components/cta").then((m) => m.CTA),
+  { ssr: false, loading: () => null },
+);
 
 export const metadata = getSEOTags();
 
@@ -28,8 +54,6 @@ export default function Home() {
       <Benefits />
       <DivideX />
       <Testimonials />
-      <DivideX />
-      <Security />
       <DivideX />
       <CTA />
       <DivideX />

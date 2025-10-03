@@ -84,6 +84,7 @@ export const Footer = () => {
           {product.map((item) => (
             <Link
               href={item.href}
+              prefetch={false}
               key={item.title}
               className="text-footer-link my-2 text-sm font-medium"
             >
@@ -96,6 +97,7 @@ export const Footer = () => {
           {company.map((item) => (
             <Link
               href={item.href}
+              prefetch={false}
               key={item.title}
               className="text-footer-link my-2 text-sm font-medium"
             >
@@ -108,6 +110,7 @@ export const Footer = () => {
           {security.map((item) => (
             <Link
               href={item.href}
+              prefetch={false}
               key={item.title}
               className="text-footer-link my-2 text-sm font-medium"
             >

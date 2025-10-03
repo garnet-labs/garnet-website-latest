@@ -1,11 +1,9 @@
-"use client";
 import React from "react";
 import { Container } from "./container";
 import { Heading } from "./heading";
 import { ShimmerText } from "./shimmer-text";
 import { SubHeading } from "./subheading";
 import { GartnerLogo, GartnerLogoText, Star } from "@/icons/general";
-import { motion } from "motion/react";
 import { Button } from "./button";
 import { Badge } from "./badge";
 import Link from "next/link";
