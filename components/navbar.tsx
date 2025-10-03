@@ -138,6 +138,7 @@ const DesktopNav = ({
           <Link
             className="font-medium text-gray-600 transition duration-200 hover:text-neutral-900 dark:text-gray-300 dark:hover:text-neutral-300"
             href={item.href}
+            prefetch={false}
             key={item.title}
           >
             {item.title}
@@ -182,6 +183,7 @@ const FloatingNav = ({
           <Link
             className="font-medium text-gray-600 transition duration-200 hover:text-neutral-900 dark:text-gray-300 dark:hover:text-neutral-300"
             href={item.href}
+            prefetch={false}
             key={item.title}
           >
             {item.title}
