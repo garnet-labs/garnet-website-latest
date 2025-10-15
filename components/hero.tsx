@@ -15,12 +15,11 @@ export const Hero = () => {
     <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
       <Badge text="For modern platform teams" />
       <Heading className="mt-4">
-        Runtime protection <br className="hidden sm:block" />
-        for <span className="text-brand">agentic workloads</span>
+        Runtime EDR <br className="hidden sm:block" />
+        for <span className="text-brand">Kubernetes hosts</span>
       </Heading>
-
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      Protect against supply chain attacks by monitoring ephemeral workloads and containers at runtime. Flag and block anomalous or malicious network activity before attackers persist or exfiltrate data.
+      Detect anomalous network, file, and execution behavior patterns across containers and workloads with eBPF, and block malicious network connections before attackers persist or exfiltrate data.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
