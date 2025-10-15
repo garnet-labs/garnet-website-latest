@@ -35,7 +35,7 @@ export const AgenticIntelligence = () => {
         <SectionHeading className="mt-4">
           Runtime threat detection & <br className="sm:hidden" />
            enforcement <br className="hidden sm:block" />
-          for <span className="text-brand">modern workloads</span>
+          for <span className="text-brand">modern cloud workloads</span>
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-6 max-w-4xl px-2">
