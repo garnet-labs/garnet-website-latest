@@ -15,11 +15,11 @@ export const Hero = () => {
     <Container className="border-divide flex flex-col items-center justify-center border-x px-4 pt-16 pb-16 md:pt-40 md:pb-32">
       <Badge text="For modern platform teams" />
       <Heading className="mt-4">
-        Runtime EDR <br className="hidden sm:block" />
-        for <span className="text-brand">Kubernetes hosts</span>
+        Runtime firewall <br className="hidden sm:block" />
+        for <span className="text-brand">your code</span>
       </Heading>
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      Detect anomalous network, file, and execution behavior patterns across containers and workloads with eBPF, and block malicious network connections before attackers persist or exfiltrate data.
+      From containers to AI agents, Garnet enforces runtime behavioral policies wherever code executes, detecting and blocking suspicious behaviours like outbound C2 calls or privilege abuse, to protect against compromised code and supply-chain attacks.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
