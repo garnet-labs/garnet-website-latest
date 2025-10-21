@@ -19,7 +19,7 @@ export const Hero = () => {
         for <span className="text-brand">your code</span>
       </Heading>
       <SubHeading className="mx-auto mt-6 max-w-lg">
-      From containers to AI agents, Garnet enforces runtime behavioral policies wherever code executes, detecting and blocking suspicious behaviours like outbound C2 calls or privilege abuse, to protect against compromised code and supply-chain attacks.
+      From containers to AI agents, Garnet enforces runtime behavioral policies wherever code executes, detecting and blocking suspicious behaviours like C2 network calls or privilege abuse, to protect against compromised code and supply-chain attacks.
       </SubHeading>
 
       <div className="mt-6 flex items-center gap-4">
