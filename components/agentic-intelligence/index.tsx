@@ -33,14 +33,13 @@ export const AgenticIntelligence = () => {
       <div className="flex flex-col items-center py-16">
         {/* <Badge text="Features" /> */}
         <SectionHeading className="mt-4">
-          Runtime threat detection & <br className="sm:hidden" />
-           enforcement <br className="hidden sm:block" />
-          for <span className="text-brand">modern cloud workloads</span>
+          Behavioral runtime monitoring <br className="sm:hidden" />
+           {/* enforcement <br className="hidden sm:block" /> */}
+          for <span className="text-brand">code execution</span>
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-6 max-w-4xl px-2">
-        From CI/CD runners to production clusters, Jibril surfaces suspicious behaviors across network, file, and execution layers, mapping them to MITRE tactics with high-fidelity detections and in-kernel enforcement.
-        </SubHeading>
+        From CI/CD runners to production clusters, Garnet monitors code execution and system interactions across network, file, and process layers, applying behavioral policies to detect and respond to suspicious activity in real time.        </SubHeading>
         <div className="border-divide divide-divide mt-16 grid grid-cols-1 divide-y border-y md:grid-cols-2 md:divide-x">
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
@@ -55,7 +54,7 @@ export const AgenticIntelligence = () => {
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
               <TelescopeIcon />
-              <CardTitle>Managed detections, out of the box</CardTitle>
+              <CardTitle>Managed policies, out of the box</CardTitle>
             </div>
             <CardDescription>
             From C2 traffic to file tampering and privilege escalations, you get continuously updated detection rules built from our in-house threat intelligence. 
