@@ -88,7 +88,7 @@ export const AgenticIntelligence = () => {
           <Card>
             <div className="flex items-center gap-2">
               <ShieldSplitIcon />
-              <CardTitle>Policies with deep behavioral context</CardTitle>
+              <CardTitle>Policies with behavioral context</CardTitle>
             </div>
             <CardDescription>
             Every runtime policy is enriched with deep behavioral context to eliminate noise. Clear, actionable insights your team can trust.
