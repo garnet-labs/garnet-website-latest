@@ -39,7 +39,7 @@ export const AgenticIntelligence = () => {
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-6 max-w-4xl px-2">
-        From CI/CD runners to production clusters, Garnet monitors code execution and system interactions across network, file, and process layers, applying behavioral policies to detect and respond to suspicious activity in real time.        </SubHeading>
+        From CI/CD runners to production workloads, Garnet observes system activity triggered by executing code, detecting behavioral patterns that signal compromise or supply-chain attack attempts in real time.       </SubHeading>
         <div className="border-divide divide-divide mt-16 grid grid-cols-1 divide-y border-y md:grid-cols-2 md:divide-x">
           <Card className="overflow-hidden mask-b-from-80%">
             <div className="flex items-center gap-2">
@@ -47,7 +47,7 @@ export const AgenticIntelligence = () => {
               <CardTitle>Lightweight runtime agent</CardTitle>
             </div>
             <CardDescription>
-            Deploy a high-performance eBPF agent in a few clicks, providing deep runtime visibility across any workload.
+            Deploy a high-performance eBPF agent in a few clicks, providing deep runtime visibility across any workload where code executes.
             </CardDescription>
             <LLMModelSelectorSkeleton />
           </Card>
@@ -70,7 +70,7 @@ export const AgenticIntelligence = () => {
               <CardTitle>Kernel-level behavioral detection & response</CardTitle>
             </div>
             <CardDescription>
-            High-fidelity detections enriched with MITRE ATT&CK context. Stream alerts directly into your workflows through our rich API integrations. 
+            High-fidelity behavioral detections enriched with MITRE ATT&CK context. Stream alerts directly into your workflows through our rich API integrations. 
             </CardDescription>
             <NativeToolsIntegrationSkeleton />
           </Card>
@@ -82,16 +82,16 @@ export const AgenticIntelligence = () => {
               <CardTitle>Minimal overhead, massive scale</CardTitle>
             </div>
             <CardDescription>
-            Lightweight eBPF agent runs with near-zero overhead. Protect your cloud-native workloads at scale without performance trade-offs.
+            Lightweight eBPF agent runs with near-zero overhead. Protect your code execution workloads at scale without performance trade-offs.
             </CardDescription>
           </Card>
           <Card>
             <div className="flex items-center gap-2">
               <ShieldSplitIcon />
-              <CardTitle>Detections with deep context</CardTitle>
+              <CardTitle>Policies with deep behavioral context</CardTitle>
             </div>
             <CardDescription>
-            Every detection is enriched with deep behavioral context to eliminate noise. Clear, actionable signals your team can trust.
+            Every runtime policy is enriched with deep behavioral context to eliminate noise. Clear, actionable insights your team can trust.
             </CardDescription>
           </Card>
           <Card>
