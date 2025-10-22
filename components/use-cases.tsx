@@ -21,9 +21,9 @@ import { NativeIcon } from "@/icons/bento-icons";
 export const UseCases = () => {
   const useCases = [
     {
-      title: "Supply chain attacks",
+      title: "Remote code execution (RCE)",
       description:
-        "Stop malicious behaviors triggered by compromised dependencies or build artifacts running in your environment.",
+        "Stop unauthorized code execution (shells, injected processes, or malicious binaries) in your workloads and prevent attacker control.",
       icon: <TruckIcon className="text-brand size-6" />,
     },
     {
@@ -63,11 +63,11 @@ export const UseCases = () => {
       <div className="relative flex flex-col items-center py-20">
         <Badge text="Use Cases" />
         <SectionHeading className="mt-4">
-          Protection against modern <span className="text-brand">runtime threats</span>
+          Protection against modern <span className="text-brand">supply chain attacks</span>
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-2 max-w-lg">
-          Comprehensive runtime security against the sophisticated attacker. 
+        Stop malicious system behaviors triggered by compromised code, dependencies or AI agents running in your environment. 
         </SubHeading>
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
