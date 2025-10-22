@@ -25,23 +25,23 @@ export const HowItWorks = () => {
     {
       title: "One install. Full coverage",
       description:
-        "Protect build, staging, and production Kubernetes workloads at scale with a single Helm command.",
+        "Protect your build, staging, and production workloads with one lightweight agent. Install via Helm for Kubernetes clusters or as an Action for CI/CD runners.",
       icon: FirstIcon,
       id: "install",
       skeleton: <DesignYourWorkflowSkeleton />,
     },
     {
-      title: "Catch real attack behaviors",
+      title: "Catch behavioral anomalies instantly",
       description:
-        "Detect reverse shells, container escapes, data exfiltration, and cryptominers with kernel-level fidelity.",
+        "Detect real attack behaviors the moment code executes e.g. reverse shells, C2 network calls, or privilege escalation - all surfaced with kernel-level visibility.",
       icon: SecondIcon,
       id: "detect",
       skeleton: <DeployAndScaleSkeleton />,
     },
     {
-      title: "Respond in real-time",
+      title: "Alert in your workflows",
       description:
-        "Block malicious activity instantly and stream enriched, MITRE-mapped incidents into your workflows.",
+        "Receive alerts instantly in Slack, Github, Datadog, or any tool you already use. Every detection includes runtime context so teams can triage and respond faster.",
       icon: ThirdIcon,
       id: "block",
       skeleton: <ConnectYourTooklsSkeleton />,
@@ -68,7 +68,7 @@ export const HowItWorks = () => {
         <SectionHeading className="mt-4">From install to protection in minutes</SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-6 max-w-2xl text-center px-4">
-        Deploy Jibril, our lightweight runtime agent, with a single Helm command. Get instant runtime threat detection, blocking, and high-fidelity alerts in your existing workflows.
+        Deploy Jibril, our lightweight runtime agent, via Helm or GitHub Action to monitor runtime code behavior across containers and runners. Get instant detections for suspicious system activity and alerts in your preferred workflows.
         </SubHeading>
         {/* Desktop Tabs */}
         <div className="border-divide divide-divide mt-16 hidden w-full grid-cols-2 divide-x border-t lg:grid">
