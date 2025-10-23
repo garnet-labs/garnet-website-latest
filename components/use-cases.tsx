@@ -63,11 +63,11 @@ export const UseCases = () => {
       <div className="relative flex flex-col items-center py-20">
         <Badge text="Use Cases" />
         <SectionHeading className="mt-4">
-          Protection against modern <span className="text-brand">supply chain attacks</span>
+          Protection against <span className="text-brand">supply chain attacks</span>
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-2 max-w-lg">
-        Stop malicious system behaviors triggered by compromised code, dependencies or AI agents running in your environment. 
+        Stop malicious system behaviors and actions triggered by compromised code, dependencies or AI agents running in your environment. 
         </SubHeading>
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">

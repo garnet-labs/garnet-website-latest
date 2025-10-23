@@ -30,37 +30,37 @@ export const Benefits = () => {
     {
       title: "Deploy in minutes",
       description:
-        "One Helm install, instant runtime visibility. Protect build pipelines, staging, and production without extra config.",
+        "Instant visibility into code behavior at runtime with a single Helm install or GitHub Action. No code changes required.",
       icon: <RocketIcon className="text-brand size-6" />,
     },
     {
-      title: "Zero false positives",
+      title: "Insights that matter",
       description:
-        "Deep behavioral context cuts through the noise, surfacing only the incidents that matter.",
+        "Behavioral policy detections cut through the noise, surfacing only meaningful insights tied to suspicious code execution or system activity.",
       icon: <ShieldIcon className="text-brand size-6" />,
     },
     {
       title: "Scale without overhead",
       description:
-        "eBPF-powered agents scale with your infrastructure while keeping performance impact near zero.",
+        "Lightweight eBPF agent scales across clusters and runners with very low overhead, designed for production-grade workloads.",
       icon: <GraphIcon className="text-brand size-6" />,
     },
     {
       title: "Real-time protection",
       description:
-        "Block malicious activity instantly, from C2 traffic to cryptominers, before damage spreads.",
+        "Block or flag malicious system behaviors in real time before compromised code can spread.",
       icon: <ShieldSplitIcon className="text-brand size-6" />,
     },
     {
-      title: "Complete visibility",
+      title: "Runtime coverage",
       description:
-        "See every workload across CI/CD pipelines and clusters, with an audit trail for compliance and investigations.",
+        "Observe every workload for code behavior across CI/CD, staging, and production, with an audit trail for compliance and investigations.",
       icon: <TelescopeIcon className="text-brand size-6" />,
     },
     {
-      title: "Developer friendly",
+      title: "Deploy and forget",
       description:
-        "Easy to deploy, simple to manage, no custom  tuning required.",
+        "Once installed, Garnet monitors in the background 24/7, analyzing system activity at runtime and only alerting when it detects suspicious or compromised code behavior.",
       icon: <ScreenCogIcon className="text-brand size-6" />,
     },
   ];
@@ -73,7 +73,7 @@ export const Benefits = () => {
         </SectionHeading>
 
         <SubHeading as="p" className="mx-auto mt-2 max-w-lg">
-        Purpose-built for platform scale, Jibril provides runtime protection with low overhead, deep context, and seamless integrations.
+        Garnet gives platform teams deep visibility into how code behaves at runtime across workloads, with zero overhead and instant integration into their workflows.
         </SubHeading>
       </div>
       <div className="mt-20 grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -195,7 +195,7 @@ const MiddleCard = () => {
             <motion.div className="w-full gap-y-4 p-4">
               <div className="space-y-1">
                 <h2 className="text-sm font-medium text-gray-800 dark:text-neutral-300">
-                  Detections
+                 Detections
                 </h2>
                 <p className="text-xs text-gray-500 font-mono">
                   k8s-prod-cluster • Last 24h
