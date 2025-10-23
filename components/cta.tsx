@@ -31,7 +31,7 @@ export const CTA = () => {
     <Container className="border-divide relative flex min-h-60 flex-col items-center justify-center overflow-hidden border-x px-4 py-4 md:min-h-120">
       <CTAOrbit className="absolute inset-x-0 -top-120 mask-b-from-30%" />
       <SectionHeading className="relative z-10 text-center lg:text-6xl">
-        Secure your runtime, <br /> <span className="text-brand">protect your business</span>
+        Secure your code, <br /> <span className="text-brand">protect your business</span>
       </SectionHeading>
       <div className="relative z-20 mt-4 flex items-center gap-4">
         <Button as={Link} href="https://dashboard.garnet.ai">

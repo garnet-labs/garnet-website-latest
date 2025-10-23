@@ -73,7 +73,7 @@ export const Footer = () => {
         <div className="col-span-2 mb-6 flex flex-col items-center text-center sm:col-span-2 sm:items-start sm:text-left md:col-span-4 lg:col-span-3">
           <Logo />
           <SubHeading as="p" className="mt-4 max-w-lg">
-            Runtime security for modern platform teams
+            Code runtime security for modern platform teams
           </SubHeading>
           {/* <Link href="https://dashboard.garnet.ai">
             <Button className="mt-4 mb-8 lg:mb-0">Start Monitoring</Button>
